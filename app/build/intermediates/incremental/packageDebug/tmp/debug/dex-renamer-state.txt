@@ -1,0 +1,4 @@
+#Mon Apr 19 12:08:51 CEST 2021
+base.0=/home/jelena/Desktop/PPproject/2021_My-PA/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

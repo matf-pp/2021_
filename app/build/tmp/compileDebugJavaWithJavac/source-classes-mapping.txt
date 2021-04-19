@@ -1,0 +1,2 @@
+com/example/mypa/BuildConfig.java
+ com.example.mypa.BuildConfig
