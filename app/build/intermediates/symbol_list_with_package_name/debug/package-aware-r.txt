@@ -976,6 +976,7 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color btnGreen
 color button_material_dark
 color button_material_light
 color cardview_dark_background
@@ -1628,6 +1629,7 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_fields
+drawable bg_mainbtn
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1773,9 +1775,20 @@ id birthDate
 id blocking
 id bottom
 id bounce
+id btAdd
+id btDeleteDone
+id btnCalendar
+id btnGrades
+id btnNext
+id btnNotes
+id btnReg
+id btnSchedule
+id btnToDo
 id buttonPanel
 id cache_measures
 id cancel_button
+id card
+id cbDone
 id center
 id center_horizontal
 id center_vertical
@@ -1801,6 +1814,7 @@ id content
 id contentPanel
 id contiguous
 id coordinator
+id coordinatorLayout3
 id cos
 id counterclockwise
 id custom
@@ -1841,6 +1855,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id etTodoTitle
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1895,6 +1910,12 @@ id line3
 id linear
 id listMode
 id list_item
+id mCal
+id mGrades
+id mMain
+id mNotes
+id mSch
+id mToDo
 id masked
 id material_clock_display
 id material_clock_face
@@ -1949,6 +1970,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id name
 id navigation_header_container
 id never
 id noScroll
@@ -1972,13 +1994,18 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id pic
 id pin
 id position
 id postLayout
 id progress_circular
 id progress_horizontal
 id radio
+id radioGroup
 id ratio
+id rbtnTheme1
+id rbtnTheme2
+id rbtnTheme3
 id rectangles
 id reverseSawtooth
 id right
@@ -1987,6 +2014,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id rvToDoItem
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2062,6 +2090,9 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
+id textView2
+id textView3
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2087,6 +2118,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvTodoTitle
 id txtEmail
 id txtLastname
 id txtName
@@ -2164,7 +2196,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2181,6 +2212,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout item_todo
+layout main_page
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2247,6 +2280,10 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout theme_choice
+layout to_do
+layout welcome_activity
+menu menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -3066,6 +3103,9 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style themeBlue
+style themePink
+style themeYellow
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
