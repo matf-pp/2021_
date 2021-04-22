@@ -9,7 +9,6 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import com.example.mypa.R;
@@ -28,21 +27,17 @@ public final class ToDoBinding implements ViewBinding {
   public final Button btDeleteDone;
 
   @NonNull
-  public final CoordinatorLayout coordinatorLayout3;
-
-  @NonNull
   public final EditText etTodoTitle;
 
   @NonNull
   public final RecyclerView rvToDoItem;
 
   private ToDoBinding(@NonNull ConstraintLayout rootView, @NonNull Button btAdd,
-      @NonNull Button btDeleteDone, @NonNull CoordinatorLayout coordinatorLayout3,
-      @NonNull EditText etTodoTitle, @NonNull RecyclerView rvToDoItem) {
+      @NonNull Button btDeleteDone, @NonNull EditText etTodoTitle,
+      @NonNull RecyclerView rvToDoItem) {
     this.rootView = rootView;
     this.btAdd = btAdd;
     this.btDeleteDone = btDeleteDone;
-    this.coordinatorLayout3 = coordinatorLayout3;
     this.etTodoTitle = etTodoTitle;
     this.rvToDoItem = rvToDoItem;
   }
@@ -86,12 +81,6 @@ public final class ToDoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.coordinatorLayout3;
-      CoordinatorLayout coordinatorLayout3 = rootView.findViewById(id);
-      if (coordinatorLayout3 == null) {
-        break missingId;
-      }
-
       id = R.id.etTodoTitle;
       EditText etTodoTitle = rootView.findViewById(id);
       if (etTodoTitle == null) {
@@ -104,8 +93,8 @@ public final class ToDoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ToDoBinding((ConstraintLayout) rootView, btAdd, btDeleteDone, coordinatorLayout3,
-          etTodoTitle, rvToDoItem);
+      return new ToDoBinding((ConstraintLayout) rootView, btAdd, btDeleteDone, etTodoTitle,
+          rvToDoItem);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -4,6 +4,10 @@
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/theme_choice.xml"
     },
     {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/event.xml",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/event.xml"
+    },
+    {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/welcome_activity.xml",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/welcome_activity.xml"
     },
@@ -16,7 +20,15 @@
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/main_page.xml"
     },
     {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/events.xml",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/events.xml"
+    },
+    {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_todo.xml",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/item_todo.xml"
+    },
+    {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/calendar.xml",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/calendar.xml"
     }
 ]

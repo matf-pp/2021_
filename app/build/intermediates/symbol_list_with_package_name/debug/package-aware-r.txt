@@ -1645,6 +1645,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_baseline_add_task_24
+drawable ic_baseline_delete_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -1756,6 +1758,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addEvent
 id alertTitle
 id aligned
 id all
@@ -1779,6 +1782,7 @@ id bounce
 id btAdd
 id btDeleteDone
 id btnCalendar
+id btnEvents
 id btnGrades
 id btnNext
 id btnNotes
@@ -1787,6 +1791,7 @@ id btnSchedule
 id btnToDo
 id buttonPanel
 id cache_measures
+id calendarView
 id cancel_button
 id card
 id cbDone
@@ -1815,9 +1820,9 @@ id content
 id contentPanel
 id contiguous
 id coordinator
-id coordinatorLayout3
 id cos
 id counterclockwise
+id createEvent
 id custom
 id customPanel
 id cut
@@ -1893,6 +1898,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imgDelete
 id info
 id invisible
 id inward
@@ -1997,6 +2003,7 @@ id peekHeight
 id percent
 id pic
 id pin
+id popUp
 id position
 id postLayout
 id progress_circular
@@ -2015,6 +2022,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id rvCalendar
 id rvToDoItem
 id save_non_transition_alpha
 id save_overlay_view
@@ -2103,6 +2111,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id theDate
 id time
 id title
 id titleDividerNoCustom
@@ -2119,11 +2128,14 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvEvent
 id tvTodoTitle
+id txtCalendar
 id txtEmail
 id txtLastname
 id txtName
 id txtQuote
+id txtSave
 id txtWelcome
 id unchecked
 id uniform
@@ -2197,6 +2209,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout calendar
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2213,6 +2226,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout event
+layout events
 layout item_todo
 layout main_page
 layout material_chip_input_combo

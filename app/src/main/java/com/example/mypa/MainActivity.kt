@@ -27,10 +27,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var name: String
     lateinit var lastname: String
     lateinit var email: String
-    var ime : String = "ime"
-    var prezime: String = "prezime"
-    var mail: String = "email"
-    var pol : String = "pol"
     var gender = 1
 
 
@@ -53,28 +49,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainPageActivity::class.java)
             startActivity(intent)
         }
-            /*   else{
-            //             setContentView(R.layout.to_do)
-            val intent = Intent(this,MainPageActivity::class.java)
-            startActivity(intent)
-        }
-*/
-        /*mActivity.txtEmail.setOnClickListener {
-            mActivity.txtEmail.setBackgroundColor(Color.parseColor("#FFF"))
-        }
-
-        mActivity.birthDate.setOnClickListener {
-            mActivity.birthDate.setBackgroundColor(Color.parseColor("#FFF"))
-        }*/
 
 
         mActivity.btnReg.setOnClickListener {
 
             var check = 0
 
-            /*var sharedPreferences: SharedPreferences = getSharedPreferences("sharedPrefers", Context.MODE_PRIVATE)
-            var editor: SharedPreferences.Editor = sharedPreferences.edit()
-*/
             name = mActivity.txtName.text.toString()
             lastname = mActivity.txtLastname.text.toString()
             email = mActivity.txtEmail.text.toString()
@@ -109,12 +89,9 @@ class MainActivity : AppCompatActivity() {
   /*         if (date == "")
                 mActivity.txtName.setBackgroundResource(R.drawable.bg_wrong)
             else {
-                check += 1
                 mActivity.txtName.setBackgroundResource(R.drawable.bg_fields)
             }
    */         if (check ==3 ) {
-                //             setContentView(R.layout.to_do)
-                //saveData()
                 helper.insertData(name,lastname,email)
 
                 val intent = Intent(this, MainPageActivity::class.java)
@@ -123,21 +100,5 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-    }
-
-    private fun saveData() {
-        val insert1: String = mActivity.txtName.text.toString()
-        val insert2: String = mActivity.txtLastname.text.toString()
-        val insert3: String = mActivity.txtName.text.toString()
-
-        val sharedPreferences: SharedPreferences = getSharedPreferences("sharedPrefers", Context.MODE_PRIVATE)
-        val editor: SharedPreferences.Editor = sharedPreferences.edit()
-
-
-        editor.putString(ime, insert1)
-        editor.putString(prezime, insert2)
-        editor.putString(prezime, insert3)
-
-        Toast.makeText(this, "Data saved: " + insert1 + " " + insert2 + " " + insert3, Toast.LENGTH_SHORT).show()
     }
 }

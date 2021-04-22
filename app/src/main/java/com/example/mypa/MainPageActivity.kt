@@ -2,7 +2,6 @@ package com.example.mypa
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.database.Cursor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -47,15 +46,13 @@ class MainPageActivity : AppCompatActivity() {
         mainBinding.btnToDo.setOnClickListener {
             val intent = Intent(this,ToDoActivity::class.java)
             startActivity(intent)
+        }
 
-        //    setContentView(R.layout.to_do)
+        mainBinding.btnCalendar.setOnClickListener {
+            val intent = Intent(this,CalendarActivity::class.java)
+            startActivity(intent)
         }
 
     }
 
-    private fun loadData() : String? {
-        val sharedPref: SharedPreferences = getSharedPreferences("sharedPrefers",Context.MODE_PRIVATE)
-        val saved1:String? = sharedPref.getString(ime,null)
-        return saved1
-    }
 }

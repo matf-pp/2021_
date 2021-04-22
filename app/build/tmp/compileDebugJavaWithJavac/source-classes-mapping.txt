@@ -1,9 +1,15 @@
+com/example/mypa/databinding/EventBinding.java
+ com.example.mypa.databinding.EventBinding
+com/example/mypa/databinding/CalendarBinding.java
+ com.example.mypa.databinding.CalendarBinding
 com/example/mypa/databinding/MainPageBinding.java
  com.example.mypa.databinding.MainPageBinding
 com/example/mypa/databinding/ThemeChoiceBinding.java
  com.example.mypa.databinding.ThemeChoiceBinding
 com/example/mypa/databinding/ToDoBinding.java
  com.example.mypa.databinding.ToDoBinding
+com/example/mypa/databinding/EventsBinding.java
+ com.example.mypa.databinding.EventsBinding
 com/example/mypa/BuildConfig.java
  com.example.mypa.BuildConfig
 com/example/mypa/databinding/WelcomeActivityBinding.java

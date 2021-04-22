@@ -1,5 +1,13 @@
 [
     {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_baseline_delete_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-mdpi/ic_baseline_delete_24.png"
+    },
+    {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_baseline_delete_24.xml.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_baseline_delete_24.xml"
+    },
+    {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/layout_main_page.xml.flat",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/main_page.xml"
     },
@@ -8,12 +16,28 @@
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
     {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_baseline_delete_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_baseline_delete_24.png"
+    },
+    {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/layout_calendar.xml.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/calendar.xml"
+    },
+    {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_baseline_add_task_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-mdpi/ic_baseline_add_task_24.png"
+    },
+    {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_baseline_delete_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_baseline_delete_24.png"
     },
     {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher_background.png.flat",
@@ -26,6 +50,10 @@
     {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/layout_event.xml.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/event.xml"
     },
     {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
@@ -48,6 +76,14 @@
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-hdpi/ic_launcher_background.png"
     },
     {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_baseline_add_task_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-hdpi/ic_baseline_add_task_24.png"
+    },
+    {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_baseline_add_task_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-ldpi/ic_baseline_add_task_24.png"
+    },
+    {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher_background.png.flat",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_background.png"
     },
@@ -64,16 +100,40 @@
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_baseline_delete_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-ldpi/ic_baseline_delete_24.png"
+    },
+    {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_baseline_delete_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-hdpi/ic_baseline_delete_24.png"
+    },
+    {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_launcher_background.xml.flat",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/layout_events.xml.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/events.xml"
     },
     {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_baseline_delete_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_baseline_delete_24.png"
+    },
+    {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_baseline_add_task_24.xml.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_baseline_add_task_24.xml"
+    },
+    {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/layout_welcome_activity.xml.flat",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/welcome_activity.xml"
+    },
+    {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_baseline_add_task_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_baseline_add_task_24.png"
     },
     {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/layout_theme_choice.xml.flat",
@@ -100,12 +160,20 @@
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_baseline_add_task_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_baseline_add_task_24.png"
+    },
+    {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/menu_menu.xml.flat",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/menu/menu.xml"
     },
     {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_baseline_add_task_24.png.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_baseline_add_task_24.png"
     },
     {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
