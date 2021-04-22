@@ -1,76 +1,86 @@
 package com.example.mypa
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
+import android.database.Cursor
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Button
 import android.widget.Toast
-import kotlinx.android.synthetic.main.theme_choice.*
-import kotlinx.android.synthetic.main.welcome_activity.*
+import androidx.core.widget.addTextChangedListener
+import com.example.mypa.databinding.MainPageBinding
+import com.example.mypa.databinding.WelcomeActivityBinding
 import java.util.*
 import kotlin.properties.Delegates
 
 
 class MainActivity : AppCompatActivity() {
 
-    private var registered = false
+    private lateinit var mActivity: WelcomeActivityBinding
+
+
     lateinit var name: String
     lateinit var lastname: String
     lateinit var email: String
-    lateinit var date : String
+    var ime : String = "ime"
+    var prezime: String = "prezime"
+    var mail: String = "email"
+    var pol : String = "pol"
     var gender = 1
-    var check = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.welcome_activity)
+        mActivity = WelcomeActivityBinding.inflate(layoutInflater)
 
-        if(check == 4){
-            setContentView(R.layout.main_page)
+
+        var helper = MyDBHelper(applicationContext)
+        var db = helper.readableDatabase
+        var cursor: Cursor = db.rawQuery("select count(*) from reg",null)
+        //var i = db.execSQL("SELECT count(*) FROM REG").toString()
+        cursor.moveToFirst()
+        var i = cursor.getInt(0)
+
+
+        if(i == 0 )
+            setContentView(mActivity.root)
+        else {
+            val intent = Intent(this, MainPageActivity::class.java)
+            startActivity(intent)
         }
-        else{
-
-        /*txtName.addTextChangedListener(object: TextWatcher{
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                txtLastname.setBackgroundColor(Color.parseColor("#FFF"))
-            }
-
-        })
+            /*   else{
+            //             setContentView(R.layout.to_do)
+            val intent = Intent(this,MainPageActivity::class.java)
+            startActivity(intent)
+        }
 */
-        /*
-        txtLastname.setOnClickListener {
-            txtLastname.setBackgroundColor(Color.parseColor("#FFF"))
+        /*mActivity.txtEmail.setOnClickListener {
+            mActivity.txtEmail.setBackgroundColor(Color.parseColor("#FFF"))
         }
 
-        txtEmail.setOnClickListener {
-            txtEmail.setBackgroundColor(Color.parseColor("#FFF"))
-        }
-
-        birthDate.setOnClickListener {
-            birthDate.setBackgroundColor(Color.parseColor("#FFF"))
-        }
-
-        */
-
-        btnReg.setOnClickListener {
-
-            name = txtName.text.toString()
-            lastname = txtLastname.text.toString()
-            email = txtEmail.text.toString()
-            date = birthDate.text.toString()
+        mActivity.birthDate.setOnClickListener {
+            mActivity.birthDate.setBackgroundColor(Color.parseColor("#FFF"))
+        }*/
 
 
-            val pomGndr = gndr.checkedRadioButtonId
+        mActivity.btnReg.setOnClickListener {
+
+            var check = 0
+
+            /*var sharedPreferences: SharedPreferences = getSharedPreferences("sharedPrefers", Context.MODE_PRIVATE)
+            var editor: SharedPreferences.Editor = sharedPreferences.edit()
+*/
+            name = mActivity.txtName.text.toString()
+            lastname = mActivity.txtLastname.text.toString()
+            email = mActivity.txtEmail.text.toString()
+     //       date = mActivity.birthDate.text.toString()
+
+            val pomGndr = mActivity.gndr.checkedRadioButtonId
 
             if (pomGndr == R.id.gndrFemale)
                 gender = 1
@@ -78,33 +88,56 @@ class MainActivity : AppCompatActivity() {
                 gender = 0
 
 
-            if (name == "")
-                txtName.setBackgroundColor(Color.parseColor("#cd432e"))
-            else
-
+            if (name == "") {
+                mActivity.txtName.setBackgroundResource(R.drawable.bg_wrong)
+            } else {
+                mActivity.txtName.setBackgroundResource(R.drawable.bg_fields)
                 check += 1
-
+            }
             if (lastname == "")
-                txtLastname.setBackgroundColor(Color.parseColor("#cd432e"))
-            else
+                mActivity.txtLastname.setBackgroundResource(R.drawable.bg_wrong)
+            else {
                 check += 1
-
+                mActivity.txtLastname.setBackgroundResource(R.drawable.bg_fields)
+            }
             if (email == "")
-                txtEmail.setBackgroundColor(Color.parseColor("#cd432e"))
-            else
+                mActivity.txtEmail.setBackgroundResource(R.drawable.bg_wrong)
+            else {
                 check += 1
-
-
-            if (date == "")
-                birthDate.setBackgroundColor(Color.parseColor("#cd432e"))
-            else
+                mActivity.txtEmail.setBackgroundResource(R.drawable.bg_fields)
+            }
+  /*         if (date == "")
+                mActivity.txtName.setBackgroundResource(R.drawable.bg_wrong)
+            else {
                 check += 1
+                mActivity.txtName.setBackgroundResource(R.drawable.bg_fields)
+            }
+   */         if (check ==3 ) {
+                //             setContentView(R.layout.to_do)
+                //saveData()
+                helper.insertData(name,lastname,email)
 
-            if (check == 4)
-                setContentView(R.layout.to_do)
+                val intent = Intent(this, MainPageActivity::class.java)
+                startActivity(intent)
+            }
 
         }
-        }
+
     }
 
+    private fun saveData() {
+        val insert1: String = mActivity.txtName.text.toString()
+        val insert2: String = mActivity.txtLastname.text.toString()
+        val insert3: String = mActivity.txtName.text.toString()
+
+        val sharedPreferences: SharedPreferences = getSharedPreferences("sharedPrefers", Context.MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+
+
+        editor.putString(ime, insert1)
+        editor.putString(prezime, insert2)
+        editor.putString(prezime, insert3)
+
+        Toast.makeText(this, "Data saved: " + insert1 + " " + insert2 + " " + insert3, Toast.LENGTH_SHORT).show()
+    }
 }

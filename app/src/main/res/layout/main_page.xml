@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="cursive"
-                android:text="Name"
+                android:text=""
                 android:textSize="30sp" />
 
             <ImageView

@@ -19,6 +19,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"/>
 
+
     <TextView
         android:id="@+id/txtQuote"
         android:layout_width="wrap_content"
@@ -46,7 +47,6 @@
             android:background="@drawable/bg_fields"
             android:hint="  Name"
             android:fontFamily="sans-serif-condensed-light"/>
-
 
         <EditText
             android:id="@+id/txtLastname"

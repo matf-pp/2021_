@@ -29,7 +29,7 @@
 20        android:theme="@style/themePink" >
 20-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:11:9-41
 21        <activity android:name="com.example.mypa.ToDoActivity" />
-21-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:12:9-59
+21-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:12:9-49
 21-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:12:19-47
 22        <activity android:name="com.example.mypa.MainPageActivity" />
 22-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:13:9-54

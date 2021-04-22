@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/themePink">
-        <activity android:name=".ToDoActivity"></activity>
+        <activity android:name=".ToDoActivity"/>
         <activity android:name=".MainPageActivity" />
         <activity android:name=".ThemeChoiceActivity" />
         <activity android:name=".MainActivity">
