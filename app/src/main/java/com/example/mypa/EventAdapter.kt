@@ -26,18 +26,20 @@ class EventAdapter(private var myDB: MyDBHelper, private var events: MutableList
         notifyDataSetChanged()
     }
 
-    fun delete(date:String){
+ /*   fun delete(date:String){
         myDB.deleteEvent()
         events = myDB.getAllEvents(date)
         this.setTasks(events)
     }
+*/
+
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
             var dogadjaj : Event = events[position]
             holder.eventBinding.tvEvent.setText(dogadjaj.event)
             holder.eventBinding.imgDelete.setOnClickListener {
                 dogadjaj.isChecked = 1
-                myDB.updateEvent(dogadjaj.id,dogadjaj.isChecked)
+          //      myDB.updateEvent(dogadjaj.id,dogadjaj.isChecked)
             }
     }
 

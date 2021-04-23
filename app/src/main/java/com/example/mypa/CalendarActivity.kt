@@ -28,7 +28,7 @@ class CalendarActivity : AppCompatActivity() {
 
         calendarActivity.calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
             this.year = year.toString()
-            this.month = (month +1 ).toString()
+            this.month = (month ).toString()
             day = dayOfMonth.toString()
             date = day + "." + month + "." + year + "."
 
@@ -56,13 +56,13 @@ class CalendarActivity : AppCompatActivity() {
             calendarActivity.popUp.isVisible = false
         }
 
-        eventBinding.imgDelete.setOnClickListener{
-
+       /* eventBinding.imgDelete.setOnClickListener{
             eventAdapter.delete(date)
             lista = helper.getAllEvents(date)
             eventAdapter.setTasks(lista)
 
         }
+*/
 
 
     }

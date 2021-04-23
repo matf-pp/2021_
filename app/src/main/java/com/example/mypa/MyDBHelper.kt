@@ -62,14 +62,14 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         db.update("TODO",cv,"ID=?", arrayOf(id.toString()))
     }
 
-    fun updateEvent(id:Integer, checked: Int){
+  /*  fun updateEvent(id:Integer, checked: Int){
         var db=this.writableDatabase
         var cv = ContentValues()
         cv.put("CLICKED",checked)
         db.update("EVENTS",cv,"ID=?", arrayOf(id.toString()))
     }
-
-    fun deleteEvent(){
+*/
+  /*  fun deleteEvent(){
         var db=this.writableDatabase
         //db.delete("EVENTS","ID=?", arrayOf(id.toString()))
         var cursor: Cursor? = null
@@ -92,7 +92,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
             }
         }
     }
-
+*/
     fun deleteTask(id:Integer){
         var db=this.writableDatabase
         db.delete("TODO","ID=?", arrayOf(id.toString()))
