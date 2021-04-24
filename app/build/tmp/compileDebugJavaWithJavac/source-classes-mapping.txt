@@ -1,18 +1,30 @@
+com/example/mypa/databinding/ActivityDayBinding.java
+ com.example.mypa.databinding.ActivityDayBinding
+com/example/mypa/databinding/ScheduleBinding.java
+ com.example.mypa.databinding.ScheduleBinding
+com/example/mypa/databinding/MainPageBinding.java
+ com.example.mypa.databinding.MainPageBinding
+com/example/mypa/BuildConfig.java
+ com.example.mypa.BuildConfig
+com/example/mypa/databinding/ItemTodoBinding.java
+ com.example.mypa.databinding.ItemTodoBinding
+com/example/mypa/databinding/NoteBinding.java
+ com.example.mypa.databinding.NoteBinding
+com/example/mypa/databinding/OneactivityitemBinding.java
+ com.example.mypa.databinding.OneactivityitemBinding
 com/example/mypa/databinding/EventBinding.java
  com.example.mypa.databinding.EventBinding
 com/example/mypa/databinding/CalendarBinding.java
  com.example.mypa.databinding.CalendarBinding
-com/example/mypa/databinding/MainPageBinding.java
- com.example.mypa.databinding.MainPageBinding
+com/example/mypa/databinding/OnedayitemBinding.java
+ com.example.mypa.databinding.OnedayitemBinding
+com/example/mypa/databinding/NotesBinding.java
+ com.example.mypa.databinding.NotesBinding
 com/example/mypa/databinding/ThemeChoiceBinding.java
  com.example.mypa.databinding.ThemeChoiceBinding
 com/example/mypa/databinding/ToDoBinding.java
  com.example.mypa.databinding.ToDoBinding
 com/example/mypa/databinding/EventsBinding.java
  com.example.mypa.databinding.EventsBinding
-com/example/mypa/BuildConfig.java
- com.example.mypa.BuildConfig
 com/example/mypa/databinding/WelcomeActivityBinding.java
  com.example.mypa.databinding.WelcomeActivityBinding
-com/example/mypa/databinding/ItemTodoBinding.java
- com.example.mypa.databinding.ItemTodoBinding

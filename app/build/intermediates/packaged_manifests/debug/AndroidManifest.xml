@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/themePink" >
+        <activity android:name="com.example.mypa.NotesActivity" />
+        <activity android:name="com.example.mypa.DayActivity" />
+        <activity android:name="com.example.mypa.Schedule" />
         <activity android:name="com.example.mypa.CalendarActivity" />
         <activity android:name="com.example.mypa.ToDoActivity" />
         <activity android:name="com.example.mypa.MainPageActivity" />

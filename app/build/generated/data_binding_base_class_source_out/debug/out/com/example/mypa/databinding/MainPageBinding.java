@@ -40,6 +40,9 @@ public final class MainPageBinding implements ViewBinding {
   public final MaterialCardView card;
 
   @NonNull
+  public final ImageView imageView;
+
+  @NonNull
   public final TextView name;
 
   @NonNull
@@ -47,8 +50,8 @@ public final class MainPageBinding implements ViewBinding {
 
   private MainPageBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnCalendar,
       @NonNull Button btnGrades, @NonNull Button btnNotes, @NonNull Button btnSchedule,
-      @NonNull Button btnToDo, @NonNull MaterialCardView card, @NonNull TextView name,
-      @NonNull ImageView pic) {
+      @NonNull Button btnToDo, @NonNull MaterialCardView card, @NonNull ImageView imageView,
+      @NonNull TextView name, @NonNull ImageView pic) {
     this.rootView = rootView;
     this.btnCalendar = btnCalendar;
     this.btnGrades = btnGrades;
@@ -56,6 +59,7 @@ public final class MainPageBinding implements ViewBinding {
     this.btnSchedule = btnSchedule;
     this.btnToDo = btnToDo;
     this.card = card;
+    this.imageView = imageView;
     this.name = name;
     this.pic = pic;
   }
@@ -123,6 +127,12 @@ public final class MainPageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageView;
+      ImageView imageView = rootView.findViewById(id);
+      if (imageView == null) {
+        break missingId;
+      }
+
       id = R.id.name;
       TextView name = rootView.findViewById(id);
       if (name == null) {
@@ -136,7 +146,7 @@ public final class MainPageBinding implements ViewBinding {
       }
 
       return new MainPageBinding((ConstraintLayout) rootView, btnCalendar, btnGrades, btnNotes,
-          btnSchedule, btnToDo, card, name, pic);
+          btnSchedule, btnToDo, card, imageView, name, pic);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

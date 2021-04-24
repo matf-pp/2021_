@@ -1,8 +1,10 @@
 package com.example.mypa
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,7 +49,36 @@ class ToDoActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        val id = item.itemId
+        if(id == R.id.mMain){
+            val intent = Intent(this,MainPageActivity::class.java)
+            startActivity(intent)
+            return true
+        } else if(id == R.id.mToDo){
+            val intent = Intent(this,ToDoActivity::class.java)
+            startActivity(intent)
+            return true
+        } else if(id == R.id.mCal){
+            val intent = Intent(this,CalendarActivity::class.java)
+            startActivity(intent)
+            return true
+        } else if(id == R.id.mNotes){
+            val intent = Intent(this,NotesActivity::class.java)
+            startActivity(intent)
+        }
+        else if(id == R.id.mSch){
+            val intent = Intent(this,Schedule::class.java)
+            startActivity(intent)
+            return true
+        }
+
         if(toggle.onOptionsItemSelected(item)){
             return true
         }

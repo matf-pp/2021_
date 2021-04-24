@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,7 +38,16 @@ public final class CalendarBinding implements ViewBinding {
   public final EditText createEvent;
 
   @NonNull
+  public final ImageView goBack;
+
+  @NonNull
+  public final ImageView imageView;
+
+  @NonNull
   public final ConstraintLayout popUp;
+
+  @NonNull
+  public final RelativeLayout relativeLayout;
 
   @NonNull
   public final RecyclerView rvCalendar;
@@ -52,7 +63,8 @@ public final class CalendarBinding implements ViewBinding {
 
   private CalendarBinding(@NonNull ConstraintLayout rootView, @NonNull Button addEvent,
       @NonNull FloatingActionButton btnEvents, @NonNull CalendarView calendarView,
-      @NonNull EditText createEvent, @NonNull ConstraintLayout popUp,
+      @NonNull EditText createEvent, @NonNull ImageView goBack, @NonNull ImageView imageView,
+      @NonNull ConstraintLayout popUp, @NonNull RelativeLayout relativeLayout,
       @NonNull RecyclerView rvCalendar, @NonNull TextView theDate, @NonNull TextView txtCalendar,
       @NonNull TextView txtSave) {
     this.rootView = rootView;
@@ -60,7 +72,10 @@ public final class CalendarBinding implements ViewBinding {
     this.btnEvents = btnEvents;
     this.calendarView = calendarView;
     this.createEvent = createEvent;
+    this.goBack = goBack;
+    this.imageView = imageView;
     this.popUp = popUp;
+    this.relativeLayout = relativeLayout;
     this.rvCalendar = rvCalendar;
     this.theDate = theDate;
     this.txtCalendar = txtCalendar;
@@ -118,9 +133,27 @@ public final class CalendarBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.goBack;
+      ImageView goBack = rootView.findViewById(id);
+      if (goBack == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView;
+      ImageView imageView = rootView.findViewById(id);
+      if (imageView == null) {
+        break missingId;
+      }
+
       id = R.id.popUp;
       ConstraintLayout popUp = rootView.findViewById(id);
       if (popUp == null) {
+        break missingId;
+      }
+
+      id = R.id.relativeLayout;
+      RelativeLayout relativeLayout = rootView.findViewById(id);
+      if (relativeLayout == null) {
         break missingId;
       }
 
@@ -149,7 +182,8 @@ public final class CalendarBinding implements ViewBinding {
       }
 
       return new CalendarBinding((ConstraintLayout) rootView, addEvent, btnEvents, calendarView,
-          createEvent, popUp, rvCalendar, theDate, txtCalendar, txtSave);
+          createEvent, goBack, imageView, popUp, relativeLayout, rvCalendar, theDate, txtCalendar,
+          txtSave);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

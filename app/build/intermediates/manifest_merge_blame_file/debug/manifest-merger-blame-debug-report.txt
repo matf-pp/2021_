@@ -11,7 +11,7 @@
 9-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml
 10
 11    <application
-11-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:5:5-23:19
+11-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:5:5-26:19
 12        android:allowBackup="true"
 12-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -28,32 +28,41 @@
 19        android:testOnly="true"
 20        android:theme="@style/themePink" >
 20-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:11:9-41
-21        <activity android:name="com.example.mypa.CalendarActivity" />
-21-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:12:9-63
-21-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:12:19-51
-22        <activity android:name="com.example.mypa.ToDoActivity" />
-22-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:13:9-50
-22-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:13:19-47
-23        <activity android:name="com.example.mypa.MainPageActivity" />
-23-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:14:9-54
-23-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:14:19-51
-24        <activity android:name="com.example.mypa.ThemeChoiceActivity" />
-24-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:15:9-57
-24-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:15:19-54
-25        <activity android:name="com.example.mypa.MainActivity" >
-25-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:16:9-22:20
+21        <activity android:name="com.example.mypa.NotesActivity" />
+21-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:12:9-60
+21-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:12:19-48
+22        <activity android:name="com.example.mypa.DayActivity" />
+22-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:13:9-49
+22-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:13:19-46
+23        <activity android:name="com.example.mypa.Schedule" />
+23-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:14:9-46
+23-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:14:19-43
+24        <activity android:name="com.example.mypa.CalendarActivity" />
+24-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:15:9-54
+24-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:15:19-51
+25        <activity android:name="com.example.mypa.ToDoActivity" />
+25-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:16:9-50
 25-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:16:19-47
-26            <intent-filter>
-26-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:17:13-21:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:18:17-69
-27-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:18:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:20:17-77
-29-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:20:27-74
-30            </intent-filter>
-31        </activity>
-32    </application>
-33
-34</manifest>
+26        <activity android:name="com.example.mypa.MainPageActivity" />
+26-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:17:9-54
+26-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:17:19-51
+27        <activity android:name="com.example.mypa.ThemeChoiceActivity" />
+27-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:18:9-57
+27-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:18:19-54
+28        <activity android:name="com.example.mypa.MainActivity" >
+28-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:19:9-25:20
+28-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:19:19-47
+29            <intent-filter>
+29-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:20:13-24:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:21:17-69
+30-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:21:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:23:17-77
+32-->/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/AndroidManifest.xml:23:27-74
+33            </intent-filter>
+34        </activity>
+35    </application>
+36
+37</manifest>

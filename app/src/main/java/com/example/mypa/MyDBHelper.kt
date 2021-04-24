@@ -11,10 +11,20 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         db?.execSQL("CREATE TABLE IF NOT EXISTS TODO(ID INTEGER PRIMARY KEY AUTOINCREMENT,ITEM TEXT,CHECKED INT)")
         db?.execSQL("CREATE TABLE IF NOT EXISTS REG(ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT, LASTNAME TEXT, EMAIL TEXT)")
         db?.execSQL("CREATE TABLE IF NOT EXISTS EVENTS(ID INTEGER PRIMARY KEY AUTOINCREMENT, DATE TEXT, EVENT TEXT, CLICKED INT)")
-
+        db?.execSQL("CREATE TABLE IF NOT EXISTS NOTES(ID INTEGER PRIMARY KEY AUTOINCREMENT, TITLE TEXT, NOTE TEXT)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+    }
+
+    fun makeNotes(title: String){
+        var db = this.writableDatabase
+        val cv = ContentValues()
+        cv.put("TITLE",title)
+        cv.put("NOTE","")
+
+        db.insert("NOTES",null,cv)
+
     }
 
     fun insertEvent(date: String, event: String){
@@ -38,13 +48,6 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         db.insert("REG",null,cv)
     }
 
-    /*fun getData() : String {
-        var db = this.readableDatabase
-        var jelena : String = "Jelena"
-        var name = db.rawQuery("SELECT NAME FROM REG WHERE NAME=\""+jelena + "\"",null).toString()
-        return name
-    }*/
-
     fun insertTask(item:String,checked:Int){
         var db = this.writableDatabase
         val cv = ContentValues()
@@ -62,14 +65,20 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         db.update("TODO",cv,"ID=?", arrayOf(id.toString()))
     }
 
-  /*  fun updateEvent(id:Integer, checked: Int){
+    fun updateEvent(id:Integer, checked: Int){
         var db=this.writableDatabase
         var cv = ContentValues()
         cv.put("CLICKED",checked)
         db.update("EVENTS",cv,"ID=?", arrayOf(id.toString()))
     }
-*/
-  /*  fun deleteEvent(){
+
+    fun delete(id: Integer){
+        var db = this.writableDatabase
+        db.delete("EVENTS","ID=?", arrayOf(id.toString()))
+    }
+
+
+    fun deleteEvent(){
         var db=this.writableDatabase
         //db.delete("EVENTS","ID=?", arrayOf(id.toString()))
         var cursor: Cursor? = null
@@ -81,7 +90,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
                 if(cursor.moveToFirst()){
                     do {
                         if((cursor.getInt(cursor.getColumnIndex("CLICKED"))) == 1)
-                            deleteTask(Integer(cursor.getInt(cursor.getColumnIndex("ID"))))
+                            delete(Integer(cursor.getInt(cursor.getColumnIndex("ID"))))
                     } while (cursor.moveToNext());
                 }
             }
@@ -92,7 +101,12 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
             }
         }
     }
-*/
+
+    fun deleteNote(id: Integer) {
+        var db = this.writableDatabase
+        db.delete("NOTES","ID=?", arrayOf(id.toString()))
+    }
+
     fun deleteTask(id:Integer){
         var db=this.writableDatabase
         db.delete("TODO","ID=?", arrayOf(id.toString()))
@@ -120,6 +134,8 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
             }
         }
     }
+
+
 
     fun getAll(): MutableList<ToDo> {
         var db = this.writableDatabase
@@ -177,4 +193,30 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         return lista
     }
 
+    fun getAllNotes(): MutableList<Note> {
+        var db = this.readableDatabase
+        var cursor: Cursor? = null
+        var lista = mutableListOf<Note>()
+
+        db.beginTransaction()
+        try {
+            cursor = db.query("NOTES",null,null,null,null,null,null,null)
+            if(cursor!=null){
+                if(cursor.moveToFirst()){
+                    do {
+                        var note: Note = Note(Integer(-1),"","")
+                        note.title=cursor.getString(cursor.getColumnIndex("TITLE"))
+                        note.notes=cursor.getString(cursor.getColumnIndex("NOTE"))
+                        lista.add(note)
+                    } while (cursor.moveToNext());
+                }
+            }
+        } finally {
+            db.endTransaction()
+            if (cursor != null) {
+                cursor.close()
+            }
+        }
+        return lista
+    }
 }

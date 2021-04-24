@@ -50,6 +50,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array week
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1032,6 +1033,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_banner_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1645,8 +1647,19 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_action_name_delete
+drawable ic_banner_foreground
 drawable ic_baseline_add_task_24
+drawable ic_baseline_cancel_24
+drawable ic_baseline_create_24
 drawable ic_baseline_delete_24
+drawable ic_baseline_edit_calendar_24
+drawable ic_baseline_event_note_24
+drawable ic_baseline_more_vert_24
+drawable ic_baseline_notes_24
+drawable ic_baseline_school_24
+drawable ic_channel_background
+drawable ic_channel_foreground
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -1780,6 +1793,7 @@ id blocking
 id bottom
 id bounce
 id btAdd
+id btAddNote
 id btDeleteDone
 id btnCalendar
 id btnEvents
@@ -1861,6 +1875,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id etNewNote
 id etTodoTitle
 id exitUntilCollapsed
 id expand_activities_button
@@ -1880,6 +1895,7 @@ id ghost_view_holder
 id gndr
 id gndrFemale
 id gndrMale
+id goBack
 id gone
 id graph
 id graph_wrap
@@ -1898,7 +1914,9 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id imgDelete
+id imgDeleteNote
 id info
 id invisible
 id inward
@@ -1917,6 +1935,7 @@ id line3
 id linear
 id listMode
 id list_item
+id lvWeek
 id mCal
 id mGrades
 id mMain
@@ -2015,6 +2034,7 @@ id rbtnTheme1
 id rbtnTheme2
 id rbtnTheme3
 id rectangles
+id relativeLayout
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2023,6 +2043,7 @@ id right_side
 id rounded
 id row_index_key
 id rvCalendar
+id rvNotes
 id rvToDoItem
 id save_non_transition_alpha
 id save_overlay_view
@@ -2128,7 +2149,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvDays
 id tvEvent
+id tvNote
 id tvTodoTitle
 id txtCalendar
 id txtEmail
@@ -2209,6 +2232,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_day
 layout calendar
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -2272,12 +2296,17 @@ layout mtrl_picker_header_title_text
 layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
+layout note
+layout notes
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout oneactivityitem
+layout onedayitem
+layout schedule
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2300,6 +2329,10 @@ layout theme_choice
 layout to_do
 layout welcome_activity
 menu menu
+mipmap ic_account
+mipmap ic_banner
+mipmap ic_channel
+mipmap ic_delete
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description

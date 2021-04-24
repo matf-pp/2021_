@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -38,6 +39,12 @@ public final class WelcomeActivityBinding implements ViewBinding {
   public final RadioButton gndrMale;
 
   @NonNull
+  public final ImageView imageView;
+
+  @NonNull
+  public final RelativeLayout relativeLayout;
+
+  @NonNull
   public final EditText txtEmail;
 
   @NonNull
@@ -54,14 +61,18 @@ public final class WelcomeActivityBinding implements ViewBinding {
 
   private WelcomeActivityBinding(@NonNull RelativeLayout rootView, @NonNull EditText birthDate,
       @NonNull Button btnReg, @NonNull RadioGroup gndr, @NonNull RadioButton gndrFemale,
-      @NonNull RadioButton gndrMale, @NonNull EditText txtEmail, @NonNull EditText txtLastname,
-      @NonNull EditText txtName, @NonNull TextView txtQuote, @NonNull TextView txtWelcome) {
+      @NonNull RadioButton gndrMale, @NonNull ImageView imageView,
+      @NonNull RelativeLayout relativeLayout, @NonNull EditText txtEmail,
+      @NonNull EditText txtLastname, @NonNull EditText txtName, @NonNull TextView txtQuote,
+      @NonNull TextView txtWelcome) {
     this.rootView = rootView;
     this.birthDate = birthDate;
     this.btnReg = btnReg;
     this.gndr = gndr;
     this.gndrFemale = gndrFemale;
     this.gndrMale = gndrMale;
+    this.imageView = imageView;
+    this.relativeLayout = relativeLayout;
     this.txtEmail = txtEmail;
     this.txtLastname = txtLastname;
     this.txtName = txtName;
@@ -126,6 +137,18 @@ public final class WelcomeActivityBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageView;
+      ImageView imageView = rootView.findViewById(id);
+      if (imageView == null) {
+        break missingId;
+      }
+
+      id = R.id.relativeLayout;
+      RelativeLayout relativeLayout = rootView.findViewById(id);
+      if (relativeLayout == null) {
+        break missingId;
+      }
+
       id = R.id.txtEmail;
       EditText txtEmail = rootView.findViewById(id);
       if (txtEmail == null) {
@@ -157,7 +180,8 @@ public final class WelcomeActivityBinding implements ViewBinding {
       }
 
       return new WelcomeActivityBinding((RelativeLayout) rootView, birthDate, btnReg, gndr,
-          gndrFemale, gndrMale, txtEmail, txtLastname, txtName, txtQuote, txtWelcome);
+          gndrFemale, gndrMale, imageView, relativeLayout, txtEmail, txtLastname, txtName, txtQuote,
+          txtWelcome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

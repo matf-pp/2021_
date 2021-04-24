@@ -53,6 +53,16 @@ class MainPageActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        mainBinding.btnSchedule.setOnClickListener {
+            val intent = Intent(this,Schedule::class.java)
+            startActivity(intent)
+        }
+
+        mainBinding.btnNotes.setOnClickListener {
+            val intent = Intent(this,NotesActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }
