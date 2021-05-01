@@ -3,43 +3,84 @@ package com.example.mypa
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Adapter
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mypa.databinding.NoteBinding
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mypa.databinding.NotesBinding
 
-class NotesActivity : AppCompatActivity() {
+class NotesActivity : AppCompatActivity()/*, NotesAdapter.OnNoteListener*/ {
 
     private lateinit var notesActivity: NotesBinding
-    private lateinit var noteActivity: NoteBinding
     private lateinit var noteAdapter: NotesAdapter
+    lateinit var lista : MutableList<Note>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         notesActivity = NotesBinding.inflate(layoutInflater)
-        noteActivity = NoteBinding.inflate(layoutInflater)
         setContentView(notesActivity.root)
 
-        lateinit var lista : MutableList<Note>
         var helper = MyDBHelper(applicationContext)
         lista = helper.getAllNotes()
-        noteAdapter = NotesAdapter(helper, lista)
+        noteAdapter = NotesAdapter(helper, lista/*,this*/)
 
         notesActivity.rvNotes.adapter = noteAdapter
-        notesActivity.rvNotes.layoutManager = GridLayoutManager(this,3)
-
+        notesActivity.rvNotes.layoutManager = GridLayoutManager(applicationContext,2,LinearLayoutManager.VERTICAL,false)
 
         notesActivity.btAddNote.setOnClickListener {
-            val tekst = notesActivity.etNewNote.text.toString()
-            if (tekst.isNotEmpty()) {
-                helper.makeNotes(tekst)
-                notesActivity.etNewNote.setText("")
+            notesActivity.popUp.isVisible=true
+            lista=helper.getAllNotes()
+            noteAdapter.setNotes(lista)
+        }
+
+        notesActivity.popUpBack.setOnClickListener {
+            notesActivity.popUp.isVisible=false
+            lista=helper.getAllNotes()
+            noteAdapter.setNotes(lista)
+            notesActivity.popUpEtTitle.setText("")
+            notesActivity.popUpEtCont.setText("")
+        }
+
+        notesActivity.popUpImAdd.setOnClickListener {
+            var title = notesActivity.popUpEtTitle.text.toString()
+            var cont = notesActivity.popUpEtCont.text.toString()
+            if(title.isNotEmpty() and cont.isNotEmpty()){
+                helper.insertNote(title,cont)
+                notesActivity.popUpEtTitle.setText("")
+                notesActivity.popUpEtCont.setText("")
+                notesActivity.popUp.isVisible=false
                 lista = helper.getAllNotes()
-                noteAdapter.setTasks(lista)
+                noteAdapter.setNotes(lista)
             }
         }
+
+        //TODO RecyclerListener registruje samo dugmice i uvek se otvori polje kad kliknem na kanticu umesto van nje
+
+        notesActivity.rvNotes.setRecyclerListener{
+            lista=helper.getAllNotes()
+            notesActivity.showUp.isVisible=true
+            var not: Note? =noteAdapter.getNote()
+            if (not != null) {
+                notesActivity.showTvTitl.setText(not.title)
+            }
+            if (not != null) {
+                notesActivity.showEtPrikaz.setText(not.notes)
+            }
+        }
+
+        notesActivity.showBtnBack.setOnClickListener {
+            notesActivity.showUp.isVisible=false
+            notesActivity.showTvTitl.setText("")
+            notesActivity.showEtPrikaz.setText("")
+            lista=helper.getAllNotes()
+            noteAdapter.setNotes(lista)
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -65,6 +106,7 @@ class NotesActivity : AppCompatActivity() {
         } else if(id == R.id.mNotes){
             val intent = Intent(this,NotesActivity::class.java)
             startActivity(intent)
+            return true
         }
         else if(id == R.id.mSch){
             val intent = Intent(this,Schedule::class.java)
@@ -74,4 +116,5 @@ class NotesActivity : AppCompatActivity() {
 
         return super.onOptionsItemSelected(item)
     }
+
 }

@@ -12,7 +12,7 @@ import com.example.mypa.databinding.ToDoBinding
 
 class ToDoActivity : AppCompatActivity() {
 
-    private lateinit var todoActivity : ToDoBinding
+    private lateinit var todoActivity :ToDoBinding
     private lateinit var todoAdapter: TodoAdapter
 
 
@@ -72,6 +72,7 @@ class ToDoActivity : AppCompatActivity() {
         } else if(id == R.id.mNotes){
             val intent = Intent(this,NotesActivity::class.java)
             startActivity(intent)
+            return true
         }
         else if(id == R.id.mSch){
             val intent = Intent(this,Schedule::class.java)

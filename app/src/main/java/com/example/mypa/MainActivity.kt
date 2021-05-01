@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var name: String
     lateinit var lastname: String
     lateinit var email: String
+    lateinit var date: String
     var gender = 1
 
 
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             name = mActivity.txtName.text.toString()
             lastname = mActivity.txtLastname.text.toString()
             email = mActivity.txtEmail.text.toString()
-     //       date = mActivity.birthDate.text.toString()
+            date = mActivity.birthDate.text.toString()
 
             val pomGndr = mActivity.gndr.checkedRadioButtonId
 
@@ -67,6 +68,11 @@ class MainActivity : AppCompatActivity() {
             else
                 gender = 0
 
+            val dateRegex = Regex("^(0[1-9]|[12][1-9]|3[01])[/.-](0[1-9]|1[0-2])[/.-](19|20)[0-9][0-9][ ]*")
+            val matchd = dateRegex.matchEntire(date)
+
+            val emailRegex = Regex("^[a-zA-Z0-9.%+-_]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
+            val matche = emailRegex.matchEntire(email)
 
             if (name == "") {
                 mActivity.txtName.setBackgroundResource(R.drawable.bg_wrong)
@@ -80,19 +86,24 @@ class MainActivity : AppCompatActivity() {
                 check += 1
                 mActivity.txtLastname.setBackgroundResource(R.drawable.bg_fields)
             }
-            if (email == "")
+            if (email == "" || matche==null) {
                 mActivity.txtEmail.setBackgroundResource(R.drawable.bg_wrong)
+                mActivity.txtEmail.setText("")
+            }
             else {
                 check += 1
                 mActivity.txtEmail.setBackgroundResource(R.drawable.bg_fields)
             }
-  /*         if (date == "")
-                mActivity.txtName.setBackgroundResource(R.drawable.bg_wrong)
-            else {
-                mActivity.txtName.setBackgroundResource(R.drawable.bg_fields)
+           if (date == "" || matchd==null) {
+               mActivity.birthDate.setBackgroundResource(R.drawable.bg_wrong)
+                mActivity.birthDate.setText("")
+           }
+           else {
+               check+=1
+                mActivity.birthDate.setBackgroundResource(R.drawable.bg_fields)
             }
-   */         if (check ==3 ) {
-                helper.insertData(name,lastname,email)
+            if (check ==4 ) {
+                helper.insertData(name,lastname,email,date)
 
                 val intent = Intent(this, MainPageActivity::class.java)
                 startActivity(intent)

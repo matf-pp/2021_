@@ -8,8 +8,8 @@ com/example/mypa/BuildConfig.java
  com.example.mypa.BuildConfig
 com/example/mypa/databinding/ItemTodoBinding.java
  com.example.mypa.databinding.ItemTodoBinding
-com/example/mypa/databinding/NoteBinding.java
- com.example.mypa.databinding.NoteBinding
+com/example/mypa/databinding/ItemNoteBinding.java
+ com.example.mypa.databinding.ItemNoteBinding
 com/example/mypa/databinding/OneactivityitemBinding.java
  com.example.mypa.databinding.OneactivityitemBinding
 com/example/mypa/databinding/EventBinding.java

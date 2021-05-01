@@ -47,6 +47,7 @@
 
 
     <EditText
+        android:id="@+id/quote"
         android:layout_width="165dp"
         android:layout_height="113dp"
         android:hint="Your own motivational quote.."

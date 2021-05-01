@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -24,17 +26,61 @@ public final class NotesBinding implements ViewBinding {
   public final Button btAddNote;
 
   @NonNull
-  public final EditText etNewNote;
+  public final ConstraintLayout popUp;
+
+  @NonNull
+  public final ImageView popUpBack;
+
+  @NonNull
+  public final EditText popUpEtCont;
+
+  @NonNull
+  public final EditText popUpEtTitle;
+
+  @NonNull
+  public final ImageView popUpImAdd;
+
+  @NonNull
+  public final TextView popUpTvNote;
 
   @NonNull
   public final RecyclerView rvNotes;
 
+  @NonNull
+  public final ImageView showBtnBack;
+
+  @NonNull
+  public final EditText showEtPrikaz;
+
+  @NonNull
+  public final ImageView showImSacuvaj;
+
+  @NonNull
+  public final TextView showTvTitl;
+
+  @NonNull
+  public final ConstraintLayout showUp;
+
   private NotesBinding(@NonNull ConstraintLayout rootView, @NonNull Button btAddNote,
-      @NonNull EditText etNewNote, @NonNull RecyclerView rvNotes) {
+      @NonNull ConstraintLayout popUp, @NonNull ImageView popUpBack, @NonNull EditText popUpEtCont,
+      @NonNull EditText popUpEtTitle, @NonNull ImageView popUpImAdd, @NonNull TextView popUpTvNote,
+      @NonNull RecyclerView rvNotes, @NonNull ImageView showBtnBack, @NonNull EditText showEtPrikaz,
+      @NonNull ImageView showImSacuvaj, @NonNull TextView showTvTitl,
+      @NonNull ConstraintLayout showUp) {
     this.rootView = rootView;
     this.btAddNote = btAddNote;
-    this.etNewNote = etNewNote;
+    this.popUp = popUp;
+    this.popUpBack = popUpBack;
+    this.popUpEtCont = popUpEtCont;
+    this.popUpEtTitle = popUpEtTitle;
+    this.popUpImAdd = popUpImAdd;
+    this.popUpTvNote = popUpTvNote;
     this.rvNotes = rvNotes;
+    this.showBtnBack = showBtnBack;
+    this.showEtPrikaz = showEtPrikaz;
+    this.showImSacuvaj = showImSacuvaj;
+    this.showTvTitl = showTvTitl;
+    this.showUp = showUp;
   }
 
   @Override
@@ -70,9 +116,39 @@ public final class NotesBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.etNewNote;
-      EditText etNewNote = rootView.findViewById(id);
-      if (etNewNote == null) {
+      id = R.id.popUp;
+      ConstraintLayout popUp = rootView.findViewById(id);
+      if (popUp == null) {
+        break missingId;
+      }
+
+      id = R.id.popUpBack;
+      ImageView popUpBack = rootView.findViewById(id);
+      if (popUpBack == null) {
+        break missingId;
+      }
+
+      id = R.id.popUpEtCont;
+      EditText popUpEtCont = rootView.findViewById(id);
+      if (popUpEtCont == null) {
+        break missingId;
+      }
+
+      id = R.id.popUpEtTitle;
+      EditText popUpEtTitle = rootView.findViewById(id);
+      if (popUpEtTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.popUpImAdd;
+      ImageView popUpImAdd = rootView.findViewById(id);
+      if (popUpImAdd == null) {
+        break missingId;
+      }
+
+      id = R.id.popUpTvNote;
+      TextView popUpTvNote = rootView.findViewById(id);
+      if (popUpTvNote == null) {
         break missingId;
       }
 
@@ -82,7 +158,39 @@ public final class NotesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new NotesBinding((ConstraintLayout) rootView, btAddNote, etNewNote, rvNotes);
+      id = R.id.showBtnBack;
+      ImageView showBtnBack = rootView.findViewById(id);
+      if (showBtnBack == null) {
+        break missingId;
+      }
+
+      id = R.id.showEtPrikaz;
+      EditText showEtPrikaz = rootView.findViewById(id);
+      if (showEtPrikaz == null) {
+        break missingId;
+      }
+
+      id = R.id.showImSacuvaj;
+      ImageView showImSacuvaj = rootView.findViewById(id);
+      if (showImSacuvaj == null) {
+        break missingId;
+      }
+
+      id = R.id.showTvTitl;
+      TextView showTvTitl = rootView.findViewById(id);
+      if (showTvTitl == null) {
+        break missingId;
+      }
+
+      id = R.id.showUp;
+      ConstraintLayout showUp = rootView.findViewById(id);
+      if (showUp == null) {
+        break missingId;
+      }
+
+      return new NotesBinding((ConstraintLayout) rootView, btAddNote, popUp, popUpBack, popUpEtCont,
+          popUpEtTitle, popUpImAdd, popUpTvNote, rvNotes, showBtnBack, showEtPrikaz, showImSacuvaj,
+          showTvTitl, showUp);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -2,6 +2,7 @@ package com.example.mypa
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.database.Cursor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -40,9 +41,22 @@ class MainPageActivity : AppCompatActivity() {
                 cursor.close()
             }
         }
+        
+        val sharedPref : SharedPreferences = getSharedPreferences("quote",Context.MODE_PRIVATE)
+
+    /*
+        TODO: citat namestiti i slika treba
+
+        mainBinding.quote.setOnClickListener {
+            val tekst = mainBinding.quote.text.toString()
+            val editor = sharedPref.edit()
+            editor.putString("quote", tekst)
+            editor.apply()
+        }
+*/
 
         mainBinding.name.setText( name)
-
+        mainBinding.quote.setText(sharedPref.getString("quote",""))
         mainBinding.btnToDo.setOnClickListener {
             val intent = Intent(this,ToDoActivity::class.java)
             startActivity(intent)

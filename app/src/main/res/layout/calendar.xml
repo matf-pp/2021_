@@ -81,7 +81,7 @@
         android:visibility="gone">
 
         <ImageView
-            android:id="@+id/goBack"
+            android:id="@+id/popUpBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_cancel_24"

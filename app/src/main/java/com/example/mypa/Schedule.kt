@@ -55,10 +55,11 @@ class Schedule : AppCompatActivity() {
             val intent = Intent(this,CalendarActivity::class.java)
             startActivity(intent)
             return true
-        } /*else if(id == R.id.mNotes){
-            val intent = Intent(this,Notes::class.java)
+        } else if(id == R.id.mNotes){
+            val intent = Intent(this,NotesActivity::class.java)
             startActivity(intent)
-        }*/
+            return true
+        }
         else if(id == R.id.mSch){
             val intent = Intent(this,Schedule::class.java)
             startActivity(intent)

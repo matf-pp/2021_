@@ -1,12 +1,16 @@
 package com.example.mypa
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mypa.databinding.EventBinding
 
-class EventAdapter(private var myDB: MyDBHelper, private var events: MutableList<Event>) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
+
+class EventAdapter(private var context: Context, private var myDB: MyDBHelper, private var events: MutableList<Event>) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
 
     class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -26,26 +30,34 @@ class EventAdapter(private var myDB: MyDBHelper, private var events: MutableList
         notifyDataSetChanged()
     }
 
-    fun delete(date:String){
-        myDB.deleteEvent()
-        events = myDB.getAllEvents(date)
-        this.setTasks(events)
+    fun getTasks(date:String): MutableList<Event>{
+        val pom = myDB.getAllEvents(date)
+        return pom
     }
 
-
-
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
-            var dogadjaj : Event = events[position]
-            holder.eventBinding.tvEvent.setText(dogadjaj.event)
+        var dogadjaj : Event = events[position]
+        holder.eventBinding.tvEvent.setText(dogadjaj.event)
 
+        var ev = events[position]
 
-            holder.eventBinding.imgDelete.setOnClickListener {
-                var newPosition: Int = holder.adapterPosition
-                events.removeAt(newPosition)
-                myDB.deleteNote(events[newPosition].id)
-                notifyItemRemoved(newPosition)
-                notifyItemRangeChanged(newPosition, events.size)
-            }
+        holder.eventBinding.imgDelete.setOnClickListener {
+            Toast.makeText(it.context,"Satro radi ${position}",Toast.LENGTH_SHORT).show()
+
+            var date = ev.date
+            myDB.deleteEvent(ev)
+            events=myDB.getAllEvents(date)
+            notifyDataSetChanged()
+
+        }
+    }
+
+    fun deleteEv(pos:Int){
+        var event:Event = events[pos]
+        myDB.delete(event.id)
+        events=myDB.getAllEvents(event.date)
+        notifyItemRemoved(events.indexOf(event))
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -48,10 +49,13 @@ public final class MainPageBinding implements ViewBinding {
   @NonNull
   public final ImageView pic;
 
+  @NonNull
+  public final EditText quote;
+
   private MainPageBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnCalendar,
       @NonNull Button btnGrades, @NonNull Button btnNotes, @NonNull Button btnSchedule,
       @NonNull Button btnToDo, @NonNull MaterialCardView card, @NonNull ImageView imageView,
-      @NonNull TextView name, @NonNull ImageView pic) {
+      @NonNull TextView name, @NonNull ImageView pic, @NonNull EditText quote) {
     this.rootView = rootView;
     this.btnCalendar = btnCalendar;
     this.btnGrades = btnGrades;
@@ -62,6 +66,7 @@ public final class MainPageBinding implements ViewBinding {
     this.imageView = imageView;
     this.name = name;
     this.pic = pic;
+    this.quote = quote;
   }
 
   @Override
@@ -145,8 +150,14 @@ public final class MainPageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.quote;
+      EditText quote = rootView.findViewById(id);
+      if (quote == null) {
+        break missingId;
+      }
+
       return new MainPageBinding((ConstraintLayout) rootView, btnCalendar, btnGrades, btnNotes,
-          btnSchedule, btnToDo, card, imageView, name, pic);
+          btnSchedule, btnToDo, card, imageView, name, pic, quote);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

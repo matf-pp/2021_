@@ -37,7 +37,7 @@ class CalendarActivity : AppCompatActivity() {
             date = day + "." + this.month + "." + this.year + "."
 
             lista = helper.getAllEvents(date)
-            eventAdapter = EventAdapter(helper, lista)
+            eventAdapter = EventAdapter(this,helper, lista)
 
             calendarActivity.rvCalendar.adapter = eventAdapter
             calendarActivity.rvCalendar.layoutManager = LinearLayoutManager(this)
@@ -59,16 +59,16 @@ class CalendarActivity : AppCompatActivity() {
             calendarActivity.createEvent.setText("")
         }
 
-        calendarActivity.goBack.setOnClickListener {
+        calendarActivity.popUpBack.setOnClickListener {
             calendarActivity.popUp.isVisible = false
         }
 
-        /*eventBinding.imgDelete.setOnClickListener{
-            eventAdapter.delete(date)
-            lista = helper.getAllEvents(date)
-            eventAdapter.setTasks(lista)
+        calendarActivity.rvCalendar.setRecyclerListener {
+            eventBinding.imgDelete.setOnClickListener {
+                lista=eventAdapter.getTasks(calendarActivity.theDate.toString())
+            }
+        }
 
-        }*/
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -94,6 +94,7 @@ class CalendarActivity : AppCompatActivity() {
         } else if(id == R.id.mNotes){
             val intent = Intent(this,NotesActivity::class.java)
             startActivity(intent)
+            return true
         }
         else if(id == R.id.mSch){
             val intent = Intent(this,Schedule::class.java)
