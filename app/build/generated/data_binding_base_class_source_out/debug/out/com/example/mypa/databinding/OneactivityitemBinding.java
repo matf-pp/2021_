@@ -4,6 +4,7 @@ package com.example.mypa.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,14 +20,18 @@ public final class OneactivityitemBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
+  public final ImageView dayDel;
+
+  @NonNull
   public final TextView tvAct;
 
   @NonNull
   public final TextView tvTime;
 
-  private OneactivityitemBinding(@NonNull CardView rootView, @NonNull TextView tvAct,
-      @NonNull TextView tvTime) {
+  private OneactivityitemBinding(@NonNull CardView rootView, @NonNull ImageView dayDel,
+      @NonNull TextView tvAct, @NonNull TextView tvTime) {
     this.rootView = rootView;
+    this.dayDel = dayDel;
     this.tvAct = tvAct;
     this.tvTime = tvTime;
   }
@@ -58,6 +63,12 @@ public final class OneactivityitemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.dayDel;
+      ImageView dayDel = rootView.findViewById(id);
+      if (dayDel == null) {
+        break missingId;
+      }
+
       id = R.id.tvAct;
       TextView tvAct = rootView.findViewById(id);
       if (tvAct == null) {
@@ -70,7 +81,7 @@ public final class OneactivityitemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new OneactivityitemBinding((CardView) rootView, tvAct, tvTime);
+      return new OneactivityitemBinding((CardView) rootView, dayDel, tvAct, tvTime);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

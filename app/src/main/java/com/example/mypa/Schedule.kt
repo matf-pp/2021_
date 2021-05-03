@@ -15,15 +15,15 @@ class Schedule : AppCompatActivity() {
 
     private lateinit var schActivity: ScheduleBinding
     private lateinit var weekAdapter: WeekAdapter
-    private lateinit var textView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         schActivity = ScheduleBinding.inflate(layoutInflater)
         setContentView(schActivity.root)
+        var helper = MyDBHelper(applicationContext)
 
         var week: Array<String> = resources.getStringArray(R.array.week)
-        weekAdapter = WeekAdapter(this, week)
+        weekAdapter = WeekAdapter(helper,this, week)
 
         schActivity.lvWeek.adapter = weekAdapter
 
@@ -31,6 +31,7 @@ class Schedule : AppCompatActivity() {
             var dayName = week[position]
             val intent = Intent(this,DayActivity::class.java)
             startActivity(intent)
+            helper.setDayOfWeek(position)
         }
 
     }

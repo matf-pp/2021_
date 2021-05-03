@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -24,6 +25,9 @@ public final class ActivityDayBinding implements ViewBinding {
   public final ImageButton btnBack;
 
   @NonNull
+  public final ImageView dayAdd;
+
+  @NonNull
   public final EditText etAkivnost;
 
   @NonNull
@@ -33,9 +37,11 @@ public final class ActivityDayBinding implements ViewBinding {
   public final RecyclerView rvAktivnosti;
 
   private ActivityDayBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton btnBack,
-      @NonNull EditText etAkivnost, @NonNull EditText etVreme, @NonNull RecyclerView rvAktivnosti) {
+      @NonNull ImageView dayAdd, @NonNull EditText etAkivnost, @NonNull EditText etVreme,
+      @NonNull RecyclerView rvAktivnosti) {
     this.rootView = rootView;
     this.btnBack = btnBack;
+    this.dayAdd = dayAdd;
     this.etAkivnost = etAkivnost;
     this.etVreme = etVreme;
     this.rvAktivnosti = rvAktivnosti;
@@ -74,6 +80,12 @@ public final class ActivityDayBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.dayAdd;
+      ImageView dayAdd = rootView.findViewById(id);
+      if (dayAdd == null) {
+        break missingId;
+      }
+
       id = R.id.etAkivnost;
       EditText etAkivnost = rootView.findViewById(id);
       if (etAkivnost == null) {
@@ -92,8 +104,8 @@ public final class ActivityDayBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityDayBinding((ConstraintLayout) rootView, btnBack, etAkivnost, etVreme,
-          rvAktivnosti);
+      return new ActivityDayBinding((ConstraintLayout) rootView, btnBack, dayAdd, etAkivnost,
+          etVreme, rvAktivnosti);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

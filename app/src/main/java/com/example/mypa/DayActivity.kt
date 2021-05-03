@@ -18,13 +18,9 @@ class DayActivity : AppCompatActivity() {
 
         lateinit var lista:MutableList<Day>
         var helper = MyDBHelper(applicationContext)
+        lista=helper.getAllOnDay()
 
-        //TODO namestiti da se prosledi broj koji je to dan u nedelji
-
-    //    lista=helper.getAllOnDay(Integer(0))
-        var pom =Day(Integer(1),Integer(1),"trening","11:00")
-        lista = mutableListOf(pom)
-        dayAdapter=DayAdapter(lista)
+        dayAdapter=DayAdapter(helper,lista)
 
         dayActivity.rvAktivnosti.adapter=dayAdapter
         dayActivity.rvAktivnosti.layoutManager=LinearLayoutManager(this)
@@ -35,6 +31,17 @@ class DayActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        dayActivity.dayAdd.setOnClickListener {
+            val aktivnost=dayActivity.etAkivnost.text.toString()
+            val vreme=dayActivity.etVreme.text.toString()
+            if(aktivnost.isNotEmpty() && vreme.isNotEmpty()){
+                helper.insertDay(aktivnost,vreme)
+                lista=helper.getAllOnDay()
+                dayActivity.etAkivnost.setText("")
+                dayActivity.etVreme.setText("")
+                dayAdapter.setActivities()
+            }
+        }
 
 
     }

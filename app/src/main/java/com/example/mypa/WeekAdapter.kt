@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 
-class WeekAdapter(private val context: Context, private var days: Array<String>) : BaseAdapter() {
+class WeekAdapter(private var myDB: MyDBHelper,private val context: Context, private var days: Array<String>) : BaseAdapter() {
 
    // private var layoutInflater : LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 

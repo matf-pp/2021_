@@ -4,6 +4,10 @@
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/oneactivityitem.xml"
     },
     {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/onenote.xml",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/onenote.xml"
+    },
+    {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_note.xml",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/item_note.xml"
     },

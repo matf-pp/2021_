@@ -5,6 +5,9 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import java.util.*
+
+private lateinit var danUNedelji:Integer
 
 class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1) {
     override fun onCreate(db: SQLiteDatabase?) {
@@ -25,7 +28,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         cv.put("NOTE","")
 
         db.insert("NOTES",null,cv)
-
+        db.close()
     }
 
     fun updateNote(not:Note,cont:String){
@@ -34,15 +37,23 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         cv.put("TITLE",not.title)
         cv.put("NOTE",cont)
         db.update("NOTES",cv,"ID=?", arrayOf(not.id.toString()))
+        db.close()
     }
+
+    fun getDayOfWeek():Integer{
+        return danUNedelji
+    }
+
 
     fun insertDay(title: String, time: String){
         var db = this.writableDatabase
         val cv = ContentValues()
         cv.put("TITLE",title)
         cv.put("TIME",time)
+        cv.put("DAY", danUNedelji.toInt())
 
-        db.insert("DAY",null,cv)
+        db.insert("DAYS",null,cv)
+        db.close()
     }
 
     fun insertEvent(date: String, event: String){
@@ -53,6 +64,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         cv.put("CLICKED",0)
 
         db.insert("EVENTS",null,cv)
+        db.close()
     }
 
 
@@ -65,7 +77,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         cv.put("BIRTH",birth)
 
         db.insert("REG",null,cv)
-
+        db.close()
     }
 
     fun insertTask(item:String,checked:Int){
@@ -75,7 +87,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         cv.put("CHECKED",checked)
 
         db.insert("TODO",null,cv)
-
+        db.close()
     }
 
     fun insertNote(title:String,cont:String){
@@ -85,6 +97,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         cv.put("NOTE",cont)
 
         db.insert("NOTES",null,cv)
+        db.close()
     }
 
 
@@ -93,6 +106,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         var cv = ContentValues()
         cv.put("CHECKED",checked)
         db.update("TODO",cv,"ID=?", arrayOf(id.toString()))
+        db.close()
     }
 
     fun updateEvent(id:Integer, checked: Int){
@@ -100,46 +114,42 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         var cv = ContentValues()
         cv.put("CLICKED",checked)
         db.update("EVENTS",cv,"ID=?", arrayOf(id.toString()))
+        db.close()
     }
 
     fun delete(id: Integer){
         var db = this.writableDatabase
         db.delete("EVENTS","ID=?", arrayOf(id.toString()))
+        db.close()
     }
 
 
     fun deleteEvent(ev:Event){
         var db=this.writableDatabase
-        db.delete("EVENTS","EVENT=?", arrayOf(ev.event.toString()))
-   /*     var cursor: Cursor? = null
+        db.delete("EVENTS","ID=?", arrayOf(ev.id.toString()))
+        db.close()
+    }
 
-            db.beginTransaction()
-            try {
-                cursor = db.query("EVENTS",null,null,null,null,null,null,null)
-                if(cursor!=null){
-                    if(cursor.moveToFirst()){
-                        do {
-                            if((cursor.getInt(cursor.getColumnIndex("CLICKED"))) == 1)
-                                delete(Integer(cursor.getInt(cursor.getColumnIndex("ID"))))
-                        } while (cursor.moveToNext());
-                    }
-                }
-            } finally {
-                db.endTransaction()
-                if (cursor != null) {
-                    cursor.close()
-                }
-            }
-      */  }
+    fun setDayOfWeek(dan:Int){
+        danUNedelji= Integer(dan)
+    }
+
+    fun deleteDay(dan:Day){
+        var db= this.writableDatabase
+        db.delete("DAYS","ID=?", arrayOf(dan.id.toString()))
+        db.close()
+    }
 
     fun deleteNote(not:Note) {
         var db = this.writableDatabase
-        db.delete("NOTES","NOTE=?", arrayOf(not.notes.toString()))
+        db.delete("NOTES","ID=?", arrayOf(not.id.toString()))
+        db.close()
     }
 
     fun deleteTask(id:Integer){
         var db=this.writableDatabase
         db.delete("TODO","ID=?", arrayOf(id.toString()))
+        db.close()
     }
 
     fun deleteTasks(){
@@ -163,6 +173,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
                 cursor.close()
             }
         }
+        db.close()
     }
 
 
@@ -177,10 +188,13 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
             if(cursor!=null){
                 if(cursor.moveToFirst()){
                     do {
-                        var task: ToDo = ToDo(Integer(-1),"jelena",0)
-                        task.id=Integer(cursor.getInt(cursor.getColumnIndex("ID")))
-                        task.title=cursor.getString(cursor.getColumnIndex("ITEM"))
-                        task.isChecked=cursor.getInt(cursor.getColumnIndex("CHECKED"))
+                        val id = Integer(cursor.getInt(cursor.getColumnIndex("ID")))
+                        val title = cursor.getString(cursor.getColumnIndex("ITEM"))
+                        val checked = cursor.getInt(cursor.getColumnIndex("CHECKED"))
+                        var task: ToDo = ToDo(id,title,checked)
+                        //task.id=Integer(cursor.getInt(cursor.getColumnIndex("ID")))
+                        //task.title=cursor.getString(cursor.getColumnIndex("ITEM"))
+                        //task.isChecked=cursor.getInt(cursor.getColumnIndex("CHECKED"))
                         lista.add(task)
                     } while (cursor.moveToNext());
                 }
@@ -191,6 +205,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
                 cursor.close()
             }
         }
+        db.close()
         return lista
     }
 
@@ -205,9 +220,11 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
             if(cursor!=null){
                 if(cursor.moveToFirst()){
                     do {
-                        var dog: Event = Event(Integer(-1),"00.00.0000.","")
-                        dog.date=cursor.getString(cursor.getColumnIndex("DATE"))
-                        dog.event=cursor.getString(cursor.getColumnIndex("EVENT"))
+                        val id = Integer(cursor.getInt(cursor.getColumnIndex("ID")))
+                        val date=cursor.getString(cursor.getColumnIndex("DATE"))
+                        val event=cursor.getString(cursor.getColumnIndex("EVENT"))
+                        var dog : Event  = Event(id,date,event)
+
                         if(dog.date == date)
                             lista.add(dog)
                     } while (cursor.moveToNext());
@@ -219,10 +236,11 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
                 cursor.close()
             }
         }
+        db.close()
         return lista
     }
-/*
-    fun getAllOnDay(day: Integer): MutableList<Day> {
+
+    fun getAllOnDay(): MutableList<Day> {
         var db = this.readableDatabase
         var cursor: Cursor? = null
         var lista = mutableListOf<Day>()
@@ -233,13 +251,13 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
             if(cursor!=null){
                 if(cursor.moveToFirst()){
                     do {
-                        var dog: Day?=null
-                        var id= Integer(cursor.getString(cursor.getColumnIndex("ID")))
                         var dan=Integer(cursor.getString(cursor.getColumnIndex("DAY")))
-                        var title=cursor.getString(cursor.getColumnIndex("TITLE"))
-                        var time=cursor.getString(cursor.getColumnIndex("TIME"))
-                        if(dan == day)
-                            lista.add(Day(id,dan,title,time))
+                        if(dan.toInt() == danUNedelji.toInt()) {
+                            var title=cursor.getString(cursor.getColumnIndex("TITLE"))
+                            var time=cursor.getString(cursor.getColumnIndex("TIME"))
+                            var id= Integer(cursor.getString(cursor.getColumnIndex("ID")))
+                            lista.add(Day(id, dan, title, time))
+                        }
                     } while (cursor.moveToNext());
                 }
             }
@@ -249,10 +267,14 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
                 cursor.close()
             }
         }
+        db.close()
+        if(!lista.isEmpty())
+            lista = lista.sortedBy{ it.time } as MutableList<Day>
+
         return lista
     }
 
-*/
+
     fun getEventId(id:Integer):Event?{
         var cursor:Cursor? = null
         var db=this.readableDatabase
@@ -263,8 +285,10 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
             ev.date=cursor.getString(cursor.getColumnIndex("DATE"))
             ev.event=cursor.getString(cursor.getColumnIndex("EVENT"))
             ev.isChecked=cursor.getInt(cursor.getColumnIndex("CLICKED"))
+            db.close()
             return ev
         }
+        db.close()
         return null
     }
 
@@ -279,9 +303,11 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
             if(cursor!=null){
                 if(cursor.moveToFirst()){
                     do {
-                        var note: Note = Note(Integer(-1),"","")
-                        note.title=cursor.getString(cursor.getColumnIndex("TITLE"))
-                        note.notes=cursor.getString(cursor.getColumnIndex("NOTE"))
+                        val id = Integer(cursor.getInt(cursor.getColumnIndex("ID")))
+                        val title=cursor.getString(cursor.getColumnIndex("TITLE"))
+                        val notes=cursor.getString(cursor.getColumnIndex("NOTE"))
+                        var note: Note = Note(id,title,notes)
+
                         lista.add(note)
                     } while (cursor.moveToNext());
                 }
@@ -292,6 +318,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
                 cursor.close()
             }
         }
+        db.close()
         return lista
     }
 }

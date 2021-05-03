@@ -100,6 +100,10 @@
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/welcome_activity.xml"
     },
     {
+        "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/layout_onenote.xml.flat",
+        "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/src/main/res/layout/onenote.xml"
+    },
+    {
         "merged": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_baseline_cancel_24.xml.flat",
         "source": "/home/caca/Desktop/MyPA/2021_My-PA/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_baseline_cancel_24.xml"
     },

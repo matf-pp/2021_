@@ -1,24 +1,17 @@
 package com.example.mypa
-
 import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mypa.databinding.NotesBinding
-import android.widget.TextView
-import android.widget.Toast
 import com.example.mypa.databinding.ItemNoteBinding
 import kotlin.properties.Delegates
 
-class NotesAdapter(private var myDB: MyDBHelper, private var notes: MutableList<Note> ) : RecyclerView.Adapter<NotesAdapter.NoteViewHolder>(){
+class NotesAdapter(private var myDB: MyDBHelper, private var notes: MutableList<Note>) : RecyclerView.Adapter<NotesAdapter.NoteViewHolder>(){
 
     lateinit var lista :MutableList<Note>
     var pos by Delegates.notNull<Int>()
     private var mNote : Note? = null
-
 
     inner class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val binding= ItemNoteBinding.bind(itemView)
@@ -45,21 +38,25 @@ class NotesAdapter(private var myDB: MyDBHelper, private var notes: MutableList<
         holder.binding.tvNotee.setText(item.title)
         pos = position
 
+
         holder.binding.tvNotee.setOnClickListener{
             mNote=item
         }
 
         holder.binding.btnDelete.setOnClickListener {
             //Toast.makeText(holder.itemView.context, "Pliz radi: ${position}", Toast.LENGTH_SHORT).show()
-
             myDB.deleteNote(item)
             notes = myDB.getAllNotes()
             notifyDataSetChanged()
         }
 
+
+
         holder.binding.btnShow.setOnClickListener {
+
             mNote=notes[position]
             notifyDataSetChanged()
+
         }
     }
 

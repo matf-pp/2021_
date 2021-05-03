@@ -28,3 +28,5 @@ com/example/mypa/databinding/EventsBinding.java
  com.example.mypa.databinding.EventsBinding
 com/example/mypa/databinding/WelcomeActivityBinding.java
  com.example.mypa.databinding.WelcomeActivityBinding
+com/example/mypa/databinding/OnenoteBinding.java
+ com.example.mypa.databinding.OnenoteBinding

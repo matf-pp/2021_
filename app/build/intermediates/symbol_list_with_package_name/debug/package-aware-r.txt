@@ -1844,6 +1844,8 @@ id custom
 id customPanel
 id cut
 id date_picker_actions
+id dayAdd
+id dayDel
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -2322,6 +2324,7 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout oneactivityitem
 layout onedayitem
+layout onenote
 layout schedule
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
