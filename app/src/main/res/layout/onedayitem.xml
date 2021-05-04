@@ -17,10 +17,9 @@
             android:textSize="40sp"
             android:fontFamily="cursive"
             android:paddingStart="15dp"
-            android:text="Days"
-            android:background="#72B075"/>
+            android:text=""
+            android:background="@color/green2"/>
 
     </RelativeLayout>
-
 
 </androidx.cardview.widget.CardView>

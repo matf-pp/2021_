@@ -1,28 +1,14 @@
 package com.example.mypa
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.database.Cursor
-import android.graphics.Color
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.Button
-import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
-import com.example.mypa.databinding.MainPageBinding
 import com.example.mypa.databinding.WelcomeActivityBinding
-import java.util.*
-import kotlin.properties.Delegates
-
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mActivity: WelcomeActivityBinding
-
 
     lateinit var name: String
     lateinit var lastname: String
@@ -30,18 +16,16 @@ class MainActivity : AppCompatActivity() {
     lateinit var date: String
     var gender = 1
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mActivity = WelcomeActivityBinding.inflate(layoutInflater)
 
 
-        var helper = MyDBHelper(applicationContext)
-        var db = helper.readableDatabase
-        var cursor: Cursor = db.rawQuery("select count(*) from reg",null)
-        //var i = db.execSQL("SELECT count(*) FROM REG").toString()
+        val helper = MyDBHelper(applicationContext)
+        val db = helper.readableDatabase
+        val cursor: Cursor = db.rawQuery("select count(*) from reg",null)
         cursor.moveToFirst()
-        var i = cursor.getInt(0)
+        val i = cursor.getInt(0)
 
 
         if(i == 0 )
@@ -50,7 +34,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainPageActivity::class.java)
             startActivity(intent)
         }
-
 
         mActivity.btnReg.setOnClickListener {
 
@@ -108,8 +91,6 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, MainPageActivity::class.java)
                 startActivity(intent)
             }
-
         }
-
     }
 }

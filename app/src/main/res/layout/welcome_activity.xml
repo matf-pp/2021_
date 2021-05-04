@@ -1,103 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#39623B"
+    android:background="@color/bckgrGreen"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/txtWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome!"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:text="@string/welcome"
+        android:textColor="@color/green2"
         android:textSize="50sp"
         android:textStyle="bold|italic"
-        android:textColor="#5BD3C8"
-        android:fontFamily="cursive"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtQuote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="I believe it. I plan it. I do it."
-        android:textStyle="italic|bold"
-        android:fontFamily="cursive"
         android:layout_below="@+id/txtWelcome"
         android:layout_centerHorizontal="true"
-        />
+        android:fontFamily="cursive"
+        android:text="@string/quote2"
+        android:textSize="20sp"
+        android:textStyle="italic|bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/txtQuote"
-        android:padding="40dp">
+        android:layout_centerHorizontal="true"
+        android:padding="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtQuote">
 
         <EditText
             android:id="@+id/txtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:paddingStart="15dp"
+            android:autofillHints="@string/name"
             android:background="@drawable/bg_fields"
-            android:hint="  Name"
-            android:fontFamily="sans-serif-condensed-light"/>
+            android:fontFamily="sans-serif-condensed-light"
+            android:hint="@string/name"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/txtLastname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:layout_below="@+id/txtName"
+            android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
+            android:paddingStart="15dp"
+            android:autofillHints="@string/lastname"
             android:background="@drawable/bg_fields"
-            android:hint="  Last Name"
-            android:fontFamily="sans-serif-condensed-light"/>
+            android:fontFamily="sans-serif-condensed-light"
+            android:hint="@string/lastname"
+            android:inputType="text" />
 
 
         <EditText
             android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:layout_below="@+id/txtLastname"
+            android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
+            android:paddingStart="15dp"
+            android:autofillHints="@string/email"
             android:background="@drawable/bg_fields"
-            android:hint="  E-mail"
-            android:fontFamily="sans-serif-condensed-light"/>
+            android:fontFamily="sans-serif-condensed-light"
+            android:hint="@string/email"
+            android:inputType="text" />
 
         <RadioGroup
             android:id="@+id/gndr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtEmail"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="50dp">
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp">
 
             <RadioButton
                 android:id="@+id/gndrFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Female"
-                android:textSize="20sp"
-                android:textColor="#30B1A5"
+                android:buttonTint="@color/green2"
                 android:checked="true"
-                android:fontFamily="cursive"/>
+                android:fontFamily="cursive"
+                android:text="@string/female"
+                android:textColor="@color/green2"
+                android:textSize="20sp" />
 
             <RadioButton
                 android:id="@+id/gndrMale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Male"
-                android:textSize="20sp"
-                android:textColor="#30B1A5"
-                android:fontFamily="cursive"/>
+                android:buttonTint="@color/green2"
+                android:fontFamily="cursive"
+                android:text="@string/male"
+                android:textColor="@color/green2"
+                android:textSize="20sp" />
 
         </RadioGroup>
 
@@ -107,30 +126,35 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/gndr"
             android:layout_marginTop="40dp"
+            android:paddingStart="15dp"
+            android:autofillHints="@string/birth"
             android:background="@drawable/bg_fields"
-            android:inputType="date"
-            android:hint="  Date of birth"
-            android:fontFamily="sans-serif-condensed-light"/>
+            android:fontFamily="sans-serif-condensed-light"
+            android:hint="@string/birth"
+            android:inputType="date" />
 
         <Button
             android:id="@+id/btnReg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/birthDate"
-            android:text="Register!"
-            android:fontFamily="sans-serif-medium"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:layout_centerHorizontal="true"/>
+            android:fontFamily="sans-serif-medium"
+            android:text="Register!" />
 
     </RelativeLayout>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="196dp"
-        android:layout_height="115dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="216dp"
+        android:layout_height="96dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/ic_banner_foreground"
-        android:layout_below="@+id/relativeLayout"
-        android:layout_centerInParent="true"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

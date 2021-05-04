@@ -2,25 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:paddingStart="8dp"
     android:paddingEnd="8dp"
-    android:background="#69AA6B"
-    android:layout_marginTop="5dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
-    android:layout_marginBottom="5dp">
+    android:background="@color/green1"
+    android:layout_margin="5dp">
 
     <TextView
         android:id="@+id/tvEvent"
         android:layout_width="wrap_content"
-        android:textSize="15sp"
         android:layout_height="wrap_content"
-        android:text="Event"
+        android:text=""
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cbDone"
+        app:layout_constraintEnd_toStartOf="@+id/imgDelete"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,10 +26,10 @@
         android:id="@+id/imgDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFF"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/delete" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

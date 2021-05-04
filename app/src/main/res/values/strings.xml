@@ -10,4 +10,35 @@
         <item> Saturday </item>
         <item> Sunday </item>
     </string-array>
+
+    <string name="quote"> The bigger your dream, the bigger you\'ll grow. </string>
+    <string name="quote2">I believe it. I plan it. I do it.</string>
+    <string name="toDo">ToDo list</string>
+    <string name="calendar">Calendar</string>
+    <string name="notes">Notes</string>
+    <string name="schedule">Schedule</string>
+    <string name="saveTheDate">Save the date</string>
+    <string name="goBack">Back</string>
+    <string name="Date">Date</string>
+    <string name="calHint">Create new event</string>
+    <string name="addNew">Add event</string>
+    <string name="logo">Logo</string>
+    <string name="addActivity">Add new activity</string>
+    <string name="timeAct">Time hh:mm</string>
+    <string name="btnAdd">Add</string>
+    <string name="delete">Delete</string>
+    <string name="show">Show</string>
+    <string name="addNote">Add new note</string>
+    <string name="newNote">New note</string>
+    <string name="noteHint1">Title</string>
+    <string name="noteHint2">Notes</string>
+    <string name="toDoTitle">Enter task</string>
+    <string name="welcome">Welcome!</string>
+    <string name="name">Name</string>
+    <string name="lastname">Lastname</string>
+    <string name="email">E-mail</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="birth">Date of birth</string>
+
 </resources>

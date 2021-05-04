@@ -8,5 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="btnGreen">#233424</color>
+    <color name="bckgrGreen">#39623B</color>
+    <color name="green1">#6EC972</color>
+    <color name="green2">#88DC8A</color>
 
 </resources>

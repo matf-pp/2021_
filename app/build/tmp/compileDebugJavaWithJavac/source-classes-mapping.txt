@@ -20,13 +20,9 @@ com/example/mypa/databinding/OnedayitemBinding.java
  com.example.mypa.databinding.OnedayitemBinding
 com/example/mypa/databinding/NotesBinding.java
  com.example.mypa.databinding.NotesBinding
-com/example/mypa/databinding/ThemeChoiceBinding.java
- com.example.mypa.databinding.ThemeChoiceBinding
 com/example/mypa/databinding/ToDoBinding.java
  com.example.mypa.databinding.ToDoBinding
 com/example/mypa/databinding/EventsBinding.java
  com.example.mypa.databinding.EventsBinding
 com/example/mypa/databinding/WelcomeActivityBinding.java
  com.example.mypa.databinding.WelcomeActivityBinding
-com/example/mypa/databinding/OnenoteBinding.java
- com.example.mypa.databinding.OnenoteBinding

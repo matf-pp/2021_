@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#39623B">
+    android:background="@color/bckgrGreen">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
@@ -13,11 +12,10 @@
         android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.120000005">
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -39,33 +37,34 @@
                 android:layout_below="@+id/name"
                 android:layout_centerHorizontal="true"
                 android:src="@mipmap/ic_account" />
-
-
         </RelativeLayout>
-
     </com.google.android.material.card.MaterialCardView>
 
 
-    <EditText
+    <TextView
         android:id="@+id/quote"
         android:layout_width="165dp"
         android:layout_height="113dp"
-        android:hint="Your own motivational quote.."
+        android:fontFamily="cursive"
+        android:text="@string/quote"
+        android:textAlignment="center"
+        android:textSize="26sp"
         app:layout_constraintBottom_toTopOf="@+id/btnToDo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toEndOf="@+id/card"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.16000003" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="196dp"
         android:layout_height="115dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/logo"
         android:src="@drawable/ic_banner_foreground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,43 +72,29 @@
         android:id="@+id/btnToDo"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:background="@drawable/bg_mainbtn"
-        android:text="ToDo list"
         android:drawableRight="@drawable/ic_baseline_add_task_24"
+        android:text="@string/toDo"
         android:textAlignment="textStart"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSchedule"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card"/>
+        app:layout_constraintTop_toBottomOf="@+id/card" />
+
 
     <Button
         android:id="@+id/btnCalendar"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:background="@drawable/bg_mainbtn"
-        android:drawableRight="@drawable/ic_baseline_edit_calendar_24"
-        android:text="Calendar"
+        android:drawableLeft="@drawable/ic_baseline_edit_calendar_24"
+        android:text="@string/calendar"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGrades" />
-
-    <Button
-        android:id="@+id/btnGrades"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/bg_mainbtn"
-        android:text="Grades"
-        android:drawableLeft="@drawable/ic_baseline_school_24"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNotes" />
 
@@ -117,11 +102,11 @@
         android:id="@+id/btnNotes"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:background="@drawable/bg_mainbtn"
-        android:text="Notes"
-        android:textSize="20sp"
         android:drawableRight="@drawable/ic_baseline_create_24"
+        android:text="@string/notes"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalendar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
@@ -131,13 +116,13 @@
         android:id="@+id/btnSchedule"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:background="@drawable/bg_mainbtn"
-        android:text="Schedule"
         android:drawableLeft="@drawable/ic_baseline_event_note_24"
+        android:text="@string/schedule"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNotes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnToDo" />
 

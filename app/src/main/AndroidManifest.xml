@@ -8,14 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/themePink">
-        <activity android:name=".NotesActivity"></activity>
-        <activity android:name=".DayActivity" />
-        <activity android:name=".Schedule" />
-        <activity android:name=".CalendarActivity" />
-        <activity android:name=".ToDoActivity" />
+        android:theme="@style/themeGreen">
+        <activity android:name=".notes.NotesActivity" />
+        <activity android:name=".schedule.DayActivity" />
+        <activity android:name=".schedule.Schedule" />
+        <activity android:name=".calendar.CalendarActivity" />
+        <activity android:name=".todo.ToDoActivity" />
         <activity android:name=".MainPageActivity" />
-        <activity android:name=".ThemeChoiceActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

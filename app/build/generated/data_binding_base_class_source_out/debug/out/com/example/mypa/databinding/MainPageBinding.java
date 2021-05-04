@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -24,9 +23,6 @@ public final class MainPageBinding implements ViewBinding {
 
   @NonNull
   public final Button btnCalendar;
-
-  @NonNull
-  public final Button btnGrades;
 
   @NonNull
   public final Button btnNotes;
@@ -50,15 +46,14 @@ public final class MainPageBinding implements ViewBinding {
   public final ImageView pic;
 
   @NonNull
-  public final EditText quote;
+  public final TextView quote;
 
   private MainPageBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnCalendar,
-      @NonNull Button btnGrades, @NonNull Button btnNotes, @NonNull Button btnSchedule,
-      @NonNull Button btnToDo, @NonNull MaterialCardView card, @NonNull ImageView imageView,
-      @NonNull TextView name, @NonNull ImageView pic, @NonNull EditText quote) {
+      @NonNull Button btnNotes, @NonNull Button btnSchedule, @NonNull Button btnToDo,
+      @NonNull MaterialCardView card, @NonNull ImageView imageView, @NonNull TextView name,
+      @NonNull ImageView pic, @NonNull TextView quote) {
     this.rootView = rootView;
     this.btnCalendar = btnCalendar;
-    this.btnGrades = btnGrades;
     this.btnNotes = btnNotes;
     this.btnSchedule = btnSchedule;
     this.btnToDo = btnToDo;
@@ -99,12 +94,6 @@ public final class MainPageBinding implements ViewBinding {
       id = R.id.btnCalendar;
       Button btnCalendar = rootView.findViewById(id);
       if (btnCalendar == null) {
-        break missingId;
-      }
-
-      id = R.id.btnGrades;
-      Button btnGrades = rootView.findViewById(id);
-      if (btnGrades == null) {
         break missingId;
       }
 
@@ -151,13 +140,13 @@ public final class MainPageBinding implements ViewBinding {
       }
 
       id = R.id.quote;
-      EditText quote = rootView.findViewById(id);
+      TextView quote = rootView.findViewById(id);
       if (quote == null) {
         break missingId;
       }
 
-      return new MainPageBinding((ConstraintLayout) rootView, btnCalendar, btnGrades, btnNotes,
-          btnSchedule, btnToDo, card, imageView, name, pic, quote);
+      return new MainPageBinding((ConstraintLayout) rootView, btnCalendar, btnNotes, btnSchedule,
+          btnToDo, card, imageView, name, pic, quote);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

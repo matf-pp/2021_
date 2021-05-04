@@ -13,20 +13,20 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#69AA6B">
+        android:background="@color/green2">
 
         <TextView
             android:id="@+id/tvAct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:background="#69AA6B"
+            android:background="@color/green2"
             android:fontFamily="cursive"
             android:padding="15dp"
-            android:textSize="40dp"
+            android:textSize="40sp"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textStyle="bold"
             />
 
@@ -35,24 +35,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:background="#69AA6B"
+            android:background="@color/green2"
             android:fontFamily="cursive"
             android:padding="15dp"
             android:textSize="20sp"
             android:textAlignment="center"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="100dp"
-            android:layout_marginLeft="45dp"/>
+            android:layout_marginStart="45dp"/>
 
         <ImageView
             android:id="@+id/dayDel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp"
-            android:layout_marginLeft="350dp"
-            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+            android:layout_marginStart="350dp"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="@string/delete" />
 
 
     </RelativeLayout>

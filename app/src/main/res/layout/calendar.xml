@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalendarActivity"
-    android:background="#39623B">
+    tools:context=".calendar.CalendarActivity"
+    android:background="@color/bckgrGreen">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="Calendar"
+        android:text="@string/calendar"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,10 +36,10 @@
         android:id="@+id/txtSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save the date"
+        android:text="@string/saveTheDate"
         android:fontFamily="cursive"
         android:textSize="23sp"
-        android:textColor="#FFF"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +58,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnEvents"
+        android:backgroundTint="@color/green2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -67,18 +68,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calendarView"
         app:layout_constraintVertical_bias="0.24000001"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@android:drawable/ic_input_add"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/popUp"
         android:layout_width="300dp"
         android:layout_height="350dp"
-        android:background="#FFF"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone">
+        android:visibility="invisible">
 
         <ImageView
             android:id="@+id/popUpBack"
@@ -89,25 +90,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.98"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/goBack" />
+        <!-- "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.96"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.01999998" />
-
+-->
         <TextView
             android:id="@+id/theDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DATE"
+            android:text="@string/Date"
             android:textSize="15sp"
             android:fontFamily="cursive"
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCalendar"
@@ -122,7 +124,6 @@
             app:layout_constraintVertical_bias="0.18" />
 
         <RelativeLayout
-
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,23 +133,24 @@
                 android:id="@+id/createEvent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Create new event"
+                android:hint="@string/calHint"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.09"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:autofillHints="@string/calHint"
+                android:inputType="text"/>
 
             <Button
                 android:id="@+id/addEvent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
                 android:layout_marginBottom="10dp"
-                android:layout_toRightOf="@+id/createEvent"
-                android:text="Add event"
+                android:layout_toEndOf="@+id/createEvent"
+                android:text="@string/addNew"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/createEvent" />
@@ -164,6 +166,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+        app:layout_constraintTop_toBottomOf="@+id/calendarView"
+        android:contentDescription="@string/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

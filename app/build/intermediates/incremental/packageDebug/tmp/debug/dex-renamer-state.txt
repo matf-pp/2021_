@@ -1,4 +1,7 @@
-#Mon May 03 14:38:44 CEST 2021
-base.0=/home/caca/Desktop/MyPA/2021_My-PA/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Tue May 04 14:49:14 CEST 2021
+base.0=/home/caca/Desktop/proba/2021_My-PA/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
+base.1=/home/caca/Desktop/proba/2021_My-PA/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex

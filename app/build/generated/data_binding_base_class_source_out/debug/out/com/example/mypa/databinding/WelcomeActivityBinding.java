@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import com.example.mypa.R;
 import java.lang.NullPointerException;
@@ -21,7 +22,7 @@ import java.lang.String;
 
 public final class WelcomeActivityBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final EditText birthDate;
@@ -59,7 +60,7 @@ public final class WelcomeActivityBinding implements ViewBinding {
   @NonNull
   public final TextView txtWelcome;
 
-  private WelcomeActivityBinding(@NonNull RelativeLayout rootView, @NonNull EditText birthDate,
+  private WelcomeActivityBinding(@NonNull ConstraintLayout rootView, @NonNull EditText birthDate,
       @NonNull Button btnReg, @NonNull RadioGroup gndr, @NonNull RadioButton gndrFemale,
       @NonNull RadioButton gndrMale, @NonNull ImageView imageView,
       @NonNull RelativeLayout relativeLayout, @NonNull EditText txtEmail,
@@ -82,7 +83,7 @@ public final class WelcomeActivityBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -179,7 +180,7 @@ public final class WelcomeActivityBinding implements ViewBinding {
         break missingId;
       }
 
-      return new WelcomeActivityBinding((RelativeLayout) rootView, birthDate, btnReg, gndr,
+      return new WelcomeActivityBinding((ConstraintLayout) rootView, birthDate, btnReg, gndr,
           gndrFemale, gndrMale, imageView, relativeLayout, txtEmail, txtLastname, txtName, txtQuote,
           txtWelcome);
     }

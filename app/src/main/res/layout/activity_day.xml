@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DayActivity"
-    android:background="#6EC972">
+    tools:context=".schedule.DayActivity"
+    android:background="@color/green1">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAktivnosti"
@@ -22,30 +22,36 @@
         android:layout_marginBottom="5dp"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:hint="unesite aktivnost"
+        android:hint="@string/addActivity"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="text"
+        android:autofillHints="@string/addActivity" />
 
     <EditText
         android:id="@+id/etVreme"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:hint="Vreme: hh:mm"
+        android:hint="@string/timeAct"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toEndOf="@+id/etAkivnost" />
+        app:layout_constraintStart_toEndOf="@+id/etAkivnost"
+        android:autofillHints="@string/timeAct"
+        android:inputType="text"/>
 
     <ImageButton
         android:id="@+id/btnBack"
-        android:background="#6EC972"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@color/green1"
+        android:contentDescription="@string/goBack"
+        app:layout_constraintBottom_toTopOf="@+id/rvAktivnosti"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
         app:srcCompat="@drawable/abc_vector_test" />
 
     <ImageView
@@ -55,7 +61,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/etVreme"
         app:layout_constraintStart_toEndOf="@+id/etAkivnost"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@android:drawable/ic_menu_add"
+        android:contentDescription="@string/btnAdd" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,7 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ToDoActivity">
+    tools:context=".todo.ToDoActivity">
 
     <item android:title="Return to main page"
         android:id="@+id/mMain"/>
@@ -10,8 +10,6 @@
         android:id="@+id/mToDo"/>
     <item android:title="Calendar"
         android:id="@+id/mCal" />
-    <item android:title="Grades"
-        android:id="@+id/mGrades"/>
     <item android:title="Schedules"
         android:id="@+id/mSch"/>
     <item android:title="Notes"
