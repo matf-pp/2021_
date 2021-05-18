@@ -30,7 +30,6 @@ class Schedule : AppCompatActivity() {
         schActivity.lvWeek.adapter = weekAdapter
 
         schActivity.lvWeek.setOnItemClickListener { _, _, position, _ ->
-            var dayName = week[position]
             val intent = Intent(this, DayActivity::class.java)
             startActivity(intent)
             helper.setDayOfWeek(position)

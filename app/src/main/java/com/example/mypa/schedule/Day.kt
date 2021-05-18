@@ -1,3 +1,3 @@
 package com.example.mypa.schedule
 
-data class Day(var id:Integer,var day:Integer,var title:String,var time:String)
+data class Day(var id:Int,var day:Int,var title:String,var time:String)

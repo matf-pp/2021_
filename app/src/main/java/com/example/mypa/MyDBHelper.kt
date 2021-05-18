@@ -90,21 +90,21 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
     }
 
 
-    fun updateTask(id:Integer, checked: Int){
+    fun updateTask(id:Int, checked: Int){
         val db=this.writableDatabase
         val cv = ContentValues()
         cv.put("CHECKED",checked)
         db.update("TODO",cv,"ID=?", arrayOf(id.toString()))
         db.close()
     }
-
+/*
     fun delete(id: Integer){
         val db = this.writableDatabase
         db.delete("EVENTS","ID=?", arrayOf(id.toString()))
         db.close()
     }
 
-
+*/
     fun deleteEvent(ev: Event){
         val db=this.writableDatabase
         db.delete("EVENTS","ID=?", arrayOf(ev.id.toString()))
@@ -127,7 +127,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         db.close()
     }
 
-    fun deleteTask(id:Integer){
+    fun deleteTask(id:Int){
         val db=this.writableDatabase
         db.delete("TODO","ID=?", arrayOf(id.toString()))
         db.close()
@@ -135,10 +135,10 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
 
 
     fun getAll(): MutableList<ToDo> {
-        var db = this.writableDatabase
+        val db = this.writableDatabase
         var cursor: Cursor? = null
         var lista = mutableListOf<ToDo>()
-        lateinit var id : Integer
+        var id : Int
         lateinit var title : String
         var checked : Int
         lateinit var task : ToDo
@@ -149,7 +149,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
             if(cursor!=null){
                 if(cursor.moveToFirst()){
                     do {
-                        id = Integer(cursor.getInt(cursor.getColumnIndex("ID")))
+                        id = cursor.getInt(cursor.getColumnIndex("ID"))
                         title = cursor.getString(cursor.getColumnIndex("ITEM"))
                         checked = cursor.getInt(cursor.getColumnIndex("CHECKED"))
                         task = ToDo(id,title,checked)
@@ -171,7 +171,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         val db = this.readableDatabase
         var cursor: Cursor? = null
         var lista = mutableListOf<Event>()
-        lateinit var id : Integer
+        var id : Int
         lateinit var date : String
         lateinit var event : String
         lateinit var dog : Event
@@ -182,7 +182,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
             if(cursor!=null){
                 if(cursor.moveToFirst()){
                     do {
-                        id = Integer(cursor.getInt(cursor.getColumnIndex("ID")))
+                        id = cursor.getInt(cursor.getColumnIndex("ID"))
                         date=cursor.getString(cursor.getColumnIndex("DATE"))
                         event=cursor.getString(cursor.getColumnIndex("EVENT"))
                         dog = Event(id,date,event)
@@ -207,22 +207,22 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         val db = this.readableDatabase
         var cursor: Cursor? = null
         var lista = mutableListOf<Day>()
-        lateinit var id : Integer
+        var id : Int
         lateinit var title : String
         lateinit var time : String
-        lateinit var task : ToDo
-        lateinit var dan : Integer
+  //      lateinit var task : ToDo
+        var dan : Int
         db.beginTransaction()
         try {
             cursor = db.query("DAYS",null,null,null,null,null,null,null)
             if(cursor!=null){
                 if(cursor.moveToFirst()){
                     do {
-                        dan=Integer(cursor.getString(cursor.getColumnIndex("DAY")))
-                        if(dan.toInt() == danUNedelji.toInt()) {
+                        dan=cursor.getString(cursor.getColumnIndex("DAY")).toInt()
+                        if(dan == danUNedelji.toInt()) {
                             title=cursor.getString(cursor.getColumnIndex("TITLE"))
                             time=cursor.getString(cursor.getColumnIndex("TIME"))
-                            id= Integer(cursor.getString(cursor.getColumnIndex("ID")))
+                            id= cursor.getString(cursor.getColumnIndex("ID")).toInt()
                             lista.add(Day(id, dan, title, time))
                         }
                     } while (cursor.moveToNext());
@@ -246,7 +246,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
         val db = this.readableDatabase
         var cursor: Cursor? = null
         val lista = mutableListOf<Note>()
-        lateinit var id : Integer
+        var id : Int
         lateinit var title : String
         lateinit var notes : String
         lateinit var note : Note
@@ -257,7 +257,7 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,"DataBase", null,1
             if(cursor!=null){
                 if(cursor.moveToFirst()){
                     do {
-                        id = Integer(cursor.getInt(cursor.getColumnIndex("ID")))
+                        id = cursor.getInt(cursor.getColumnIndex("ID"))
                         title=cursor.getString(cursor.getColumnIndex("TITLE"))
                         notes=cursor.getString(cursor.getColumnIndex("NOTE"))
                         note = Note(id,title,notes)

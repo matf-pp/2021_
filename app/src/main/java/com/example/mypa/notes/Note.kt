@@ -1,3 +1,3 @@
 package com.example.mypa.notes
 
-class Note (var id: Integer, var title : String, var notes : String)
+class Note (var id: Int, var title : String, var notes : String)
