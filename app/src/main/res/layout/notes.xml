@@ -112,10 +112,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/showUp"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="450dp"
         android:background="@color/white"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -148,18 +148,19 @@
 
         <EditText
             android:hint=""
+            android:inputType="textMultiLine"
             android:id="@+id/showEtPrikaz"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:background="@drawable/bg_notefield"
             android:layout_margin="10dp"
+            android:paddingStart="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/showTvTitl"
             app:layout_constraintVertical_bias="0.26999998"
-            android:autofillHints="@string/noteHint2"
-            android:inputType="text"/>
+            android:autofillHints="@string/noteHint2" />
 
         <ImageView
             android:id="@+id/showImSacuvaj"

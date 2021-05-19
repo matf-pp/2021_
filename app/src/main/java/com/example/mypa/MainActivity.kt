@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             else
                 gender = 0
 
-            val dateRegex = Regex("^(0[1-9]|[12][1-9]|3[01])[/.-](0[1-9]|1[0-2])[/.-](19|20)[0-9][0-9][ ]*")
+            val dateRegex = Regex("^(0[1-9]|[12][1-9]|3[01])/(0[1-9]|1[0-2])/(19|20)[0-9][0-9][ ]*")
             val matchd = dateRegex.matchEntire(date)
 
             val emailRegex = Regex("^[a-zA-Z0-9.%+-_]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")

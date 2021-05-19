@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".schedule.DayActivity"
-    android:background="@color/green1">
+    android:background="@color/bckgrGreen">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAktivnosti"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
-        android:background="@color/green1"
+        android:background="@color/bckgrGreen"
         android:contentDescription="@string/goBack"
         app:layout_constraintBottom_toTopOf="@+id/rvAktivnosti"
         app:layout_constraintEnd_toEndOf="parent"

@@ -13,7 +13,7 @@
 
     <string name="quote"> The bigger your dream, the bigger you\'ll grow. </string>
     <string name="quote2">I believe it. I plan it. I do it.</string>
-    <string name="toDo">ToDo list</string>
+    <string name="toDo">To-Do list</string>
     <string name="calendar">Calendar</string>
     <string name="notes">Notes</string>
     <string name="schedule">Schedule</string>
@@ -39,6 +39,6 @@
     <string name="email">E-mail</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
-    <string name="birth">Date of birth</string>
+    <string name="birth">Date of birth: dd/mm/yyyy</string>
 
 </resources>

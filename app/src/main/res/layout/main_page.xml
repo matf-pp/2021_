@@ -64,8 +64,7 @@
         android:contentDescription="@string/logo"
         android:src="@drawable/ic_banner_foreground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.89"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button

@@ -23,7 +23,6 @@
             android:fontFamily="cursive"
             android:padding="15dp"
             android:textAlignment="center"
-            android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold"
